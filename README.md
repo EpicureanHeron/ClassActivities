@@ -602,3 +602,5 @@ TNG hangman
 Information archetitecture Think layers
 
 Data modelling: what does the data look like and how do we organize it effeciently in the code? 
+
+# 5/22/2018 notes
