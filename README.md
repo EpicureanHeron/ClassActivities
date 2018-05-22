@@ -612,4 +612,21 @@ Soon class will mostly be coding, less powerpoint (almost none)
 ### What is the DOM
 https://css-tricks.com/dom/
 
-DOM is an object and you can manipulate it (Document Object Model)
+DOM is an object and you can manipulate it (Document Object Model)\
+
+UUID Universally unique identifier 
+
+
+This adds a div within a div (that is what append does, takes whatever the variable is and places it within the html tags we are targetting)
+```
+targetDiv.appendChild(newDiv)
+
+```
+
+Creates 
+
+```
+<div id="targetDiv">
+    <div id="newDiv"></div>
+</div>
+```
