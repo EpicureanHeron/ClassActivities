@@ -604,3 +604,12 @@ Information archetitecture Think layers
 Data modelling: what does the data look like and how do we organize it effeciently in the code? 
 
 # 5/22/2018 notes
+ 
+Soon class will mostly be coding, less powerpoint (almost none)
+
+## Agenda for tonight: DOM Manipulation using plain javascript, DOM maniuplation using jQuery, Respoding to click events
+
+### What is the DOM
+https://css-tricks.com/dom/
+
+DOM is an object and you can manipulate it (Document Object Model)
