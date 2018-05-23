@@ -644,3 +644,19 @@ document.createElement("someHtmlTag")
 ```
 
 Stay with known HTML objects for functionality 
+
+
+DOM starts out common denominator, gets more specific as the you add more items 
+
+### Career: REACT IS WHERE JOBS ARE RIGHT NOW, ANGULAR IS OLD, VUE MIGHT BE UPCOMING
+
+### Career: Employer's like it when you submit a bug or issues on github
+
+## jQuery
+
+Pretty much the gold standard for DOM manipulation. It does everything pretty well and and it has been around for 10 years
+
+jQuery magic = $ 
+
+They changed the jQuery argument to be just $
+
