@@ -660,3 +660,22 @@ jQuery magic = $
 
 They changed the jQuery argument to be just $
 
+## For Each
+
+for each is saying "for each element do x
+
+The function in the below does not need to be defined, just need a parameter passed and then you can do something with that paratemer for every item in that array. 
+
+Note the last line that is }) because you need to clost the forEach 
+
+```
+array.forEach(function(parameter) {
+    console.log(parameter)
+});
+```
+example from inclass jquery assignment jquery-drinklist-unsolved.html
+```
+drinkList.forEach(function(drink) {
+    $("#drink-options").append("<div>" + drink + "</div>")
+});
+```

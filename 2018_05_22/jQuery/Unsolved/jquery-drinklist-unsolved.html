@@ -32,15 +32,19 @@
     
   // HINT: you will need a for loop to go over each element in the list
     
-    for(i=0; i < drinkList.length; i++){
+    // for(i=0; i < drinkList.length; i++){
+    //   //has jQuery create the div for you
+    //   var newDiv = $("<div>"); 
+    //     //set the text to the element from the list 
+    //   newDiv.text(drinkList[i]);
+    //     //grabs the ID (hence the #) and adds the new div 
+    //   $("#drink-options").append(newDiv);
 
-      var newDiv = $("<div>"); 
+    // }
 
-      newDiv.text(drinkList[i]);
-
-      $("#drink-options").append(newDiv);
-
-    }
+    drinkList.forEach(function(drink) {
+      $("#drink-options").append("<div>" + drink + "</div>")
+    });
 
   </script>
 
