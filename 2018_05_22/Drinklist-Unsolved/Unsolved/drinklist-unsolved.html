@@ -39,8 +39,14 @@
     // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
     // ...
   for (i = 0; i < drinkList.length; i++){
+    //scoped within the for loop
+    // create.Element("div") creates a set of div tags
     var element = document.createElement("div")
+
+    //set the element's text content (the stuff between the tags) 
      element.textContent = drinkList[i];
+     
+    //adds the element to the original div
      currentDiv.appendChild(element);
   }
 

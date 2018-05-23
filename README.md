@@ -637,3 +637,10 @@ Basically all the DOM elements are HTML tags
 
 open up javascript console and type in window. It shows a bunch of stuff...including cookies! This is separate from the DOM
 
+The below literally creates <someHtmlTag></someHtmlTag>
+
+```
+document.createElement("someHtmlTag")
+```
+
+Stay with known HTML objects for functionality 
