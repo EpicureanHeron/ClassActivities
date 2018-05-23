@@ -630,3 +630,10 @@ Creates
     <div id="newDiv"></div>
 </div>
 ```
+
+Everything going on with the DOM: https://www.w3schools.com/jsref/dom_obj_document.asp
+
+Basically all the DOM elements are HTML tags 
+
+open up javascript console and type in window. It shows a bunch of stuff...including cookies! This is separate from the DOM
+
