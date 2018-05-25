@@ -683,6 +683,49 @@ drinkList.forEach(function(drink) {
 
 # 5/24/2018 Notes
  
- 
+ JS and jQuery Jubilee 
+
+ Objectives:
+ 1. Play captian planent: the Game
+ 2. Practice j query on Fridge
+ 3. Pretend to learn scoping
+ 4. Understanding clicking events 
+
+Career stuff: Check out the Career Connections in the newsletter. Go to these. 
+
+## Captain Planet the Game
+
+I struggled with getting the image to flip in this game. I should have started with looking at https://api.jquery.com/
+
+GOOD LIBRARIES TIER THEIR INFO (scale up as needed  )
+
+
+jQuery on click event
+
+```
+$(this).attr("data-index")
+
+```
+
+the $(this) is a Jquery object which allows you to reference back (provided it is on some event, clicking or scroll over) and refer back to other properties of that jQuery object
+
+LOOK AT THE FRIDGE CLASS ASSIGNMENT FROM TODAY FOR A GOOD REFERENCE THAT USES data-letter and  .text($(this).attr("data-letter"))
+
+if you do something like the following
+
+```
+$("<div>").attr("class", "red")
+$("<div>").attr("class", "blue")
+```
+
+The div will look 
+```
+<div class="blue"></div>
+````
+
+The last attr COMPLETELY Overwrites
+
+## Scope
+Heavy on theory
 
 
