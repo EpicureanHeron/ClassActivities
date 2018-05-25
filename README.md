@@ -679,3 +679,10 @@ drinkList.forEach(function(drink) {
     $("#drink-options").append("<div>" + drink + "</div>")
 });
 ```
+### responding to click events
+
+# 5/24/2018 Notes
+ 
+ 
+
+
