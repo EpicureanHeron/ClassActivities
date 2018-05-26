@@ -731,3 +731,15 @@ Heavy on theory
 scope = boxes in boxes 
 
 
+
+# 5/26/2018 Class
+
+## agenda
+
+1. Poll/JS Exercises
+
+2. To build a semi-complex jQuery calculator application in teams
+
+3. 1 on 1 options!
+
+4. complete the javascript checkpoint
