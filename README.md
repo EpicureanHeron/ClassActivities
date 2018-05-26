@@ -743,3 +743,8 @@ scope = boxes in boxes
 3. 1 on 1 options!
 
 4. complete the javascript checkpoint
+
+## Scope and shadowing
+
+If you create a local varialbe in a function that is established as a global variable, that is called "shadowing" 
+
