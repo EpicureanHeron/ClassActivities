@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>This Example</title>
+</head>
+<body>
+
+  <h1>Make sure to view the console to see the action!</h1>
+
+  <script type="text/javascript">
+
+    // EXAMPLE ONE:
+    // --------------------------------------------------
+    // What is "this" going to print?
+    //window
+    console.log(this);
+
+
+    // EXAMPLE TWO:
+    // --------------------------------------------------
+    // What is "this" going to print?
+    //window
+    function myFunction() {
+      console.log(this);
+    }
+    myFunction();
+
+    // EXAMPLE THREE (IMPORTANT):
+    // --------------------------------------------------
+    // What is "someObj.say()" going to print?
+
+    var someObj = {
+      name: "Red Hat",
+      say: function() {
+        console.log(this.name);
+      }
+    };
+    someObj.say();
+
+
+    // EXAMPLE FOUR (BONUS, TRICKY!):
+    // --------------------------------------------------
+    // What is "myObj.yell()" going to print? Why?
+
+    var myObj = {
+      //name to be empty string
+      name: "",
+      //creates method 
+      yell: function() {
+        //sets the name to "star powerup"
+        this.name = "Star Powerup";
+        //sets a function up 
+        var changeName = function(newName) {
+          //rewriting name to whatever is passed
+          //is this is scoped to some degree and it is not overwriting it? 
+          
+          this.name = newName;
+          console.log(this.name)
+        };
+        //updates name to be blue shell
+        changeName("Blue Shell");
+        //prints the whole object
+        console.log(this);
+      }
+    };
+    myObj.yell();
+
+
+    // EXAMPLE FIVE (BONUS, TRICKY!):
+    // --------------------------------------------------
+    // What is "myObj.yell()" going to print? Why?
+
+    var myObj = {
+      name: "",
+      yell: function() {
+
+        // This line is important!
+        var thisObject = this;
+
+        this.name = "Star Powerup";
+        var changeName = function(newName) {
+          thisObject.name = newName;
+        };
+        changeName("Blue Shell");
+        console.log(thisObject);
+      }
+    };
+    myObj.yell();
+
+  </script>
+</body>
+</html>

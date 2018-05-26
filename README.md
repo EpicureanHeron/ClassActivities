@@ -760,4 +760,16 @@ alert($(this).html());
 the above code will grab whatever is pressed and the html associated with it
 
 
+Window is referring to the DOM when you call 
+
+```
+console.log(this)
+
+```
+
+## coding a jQuery calculator
+
+
+
+
 
