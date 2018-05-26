@@ -76,6 +76,9 @@ $(document).ready(function() {
 
 
 var firstNumber = "";
+var secondNumber ="";
+var firstNumberSelected = false;
+var secondNumberSelected = false;
 // Your code here...
   $(".btn").click(function() {
    
@@ -83,19 +86,36 @@ var firstNumber = "";
   
 
     if ($(this).hasClass("number")) {
-     
+     console.log("Number key");
+     console.log(pressedButton);
+      
+     if (firstNumberSelected === false ){
+      firstNumber = firstNumber+pressedButton
+     $("#first-number").html(firstNumber);
+     }
+     else if (secondNumberSelected === false && firstNumberSelected === true) {
+      secondNumber = secondNumber+pressedButton;
+      $("#second-number").html(secondNumber);
+     }
+      
     }
     
     else if ($(this).hasClass("operator")) {
-      
+      console.log("operator key");
+      firstNumberSelected = true;
+      $("#operator").html(pressedButton);
+     console.log(pressedButton);
     }
 
     else if ($(this).hasClass("equal")) {
-     
+
+      console.log("equal key");
+     console.log(pressedButton);
     } 
 
     else if ($(this).hasClass("clear")) {
-
+      console.log("clear key");
+     console.log(pressedButton);
     }
 
    
