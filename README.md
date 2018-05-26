@@ -748,3 +748,16 @@ scope = boxes in boxes
 
 If you create a local varialbe in a function that is established as a global variable, that is called "shadowing" 
 
+## this
+
+$(this) is a super useful short hand. based on something the user touches/presses .click or .on you can then use something like 
+
+```
+alert($(this).html());
+
+```
+
+the above code will grab whatever is pressed and the html associated with it
+
+
+
