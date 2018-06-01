@@ -769,6 +769,26 @@ console.log(this)
 
 ## coding a jQuery calculator
 
+# 5/31/2018 Class
+
+## Java script catch up
+
+Classes are reusable objects in javascript 
+
+like functions 
+
+## css
+
+Webkit and Mozilla are tools but a lot of browsers just work now
+
+
+## git
+Git can be the center of everything
+
+Branching is key, and a branch with a tag of "PROD" can be pushed to the production server. HOLY CRAP. This would be great for the Drupal project
+
+Create a branch, then ALWAYS pull from master when working a branch, then pull request (which I guess is a merge??)
+
 
 
 
