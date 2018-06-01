@@ -10,6 +10,15 @@
 
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+
+  .divisible {
+
+    color: red;
+    background-color: yellow;
+  }
+  
+  </style>
 
 </head>
 <body>
@@ -31,14 +40,14 @@
   <h1 class="text-center" id="random-number"></h1>
 
   <script type="text/javascript">
-    
+    //
     $(document).ready(function() {
       var numberofthenumber = 0 
       $( "#random-button" ).click(function() {
 
         var lottery = '';
-        
-        for (i = 0; i < 9; i++ ){
+       var foo = Math.floor(Math.random() * 10);
+        for (i = 0; i < foo; i++ ){
           var random = Math.floor(Math.random() * 10);
           lottery = lottery + random;
         }
@@ -47,15 +56,34 @@
 
         var newH1 = $("<div>");
 
-        newH1.attr("NumberOfNumber", numberofthenumber)
+        newH1.attr("NumberOfNumber", );
 
         numberofthenumber += 1
 
-        newH1.addClass("text-center");
+        console.log(numberofthenumber)
+        
+
+        var classForDiv  = "text-center " + numberofthenumber
+
+        
+
+        if ((numberofthenumber % 5) === 0 ) {
+          
+           classForDiv = "text-center divisible " + numberofthenumber
+
+
+
+
+        }
+
+
+        newH1.addClass(classForDiv);
         
         newH1.html(lottery);
 
         $('#random-number').prepend(newH1);
+
+        
         
        
 
