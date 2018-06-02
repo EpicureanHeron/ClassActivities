@@ -789,6 +789,11 @@ Branching is key, and a branch with a tag of "PROD" can be pushed to the product
 
 Create a branch, then ALWAYS pull from master when working a branch, then pull request (which I guess is a merge??)
 
+## Javascript
+
+there are special rules for the variable THIS
+
+
 
 
 
