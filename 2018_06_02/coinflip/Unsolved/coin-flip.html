@@ -133,13 +133,16 @@
 
       //  STEP FOUR:
 
-      //  Increment tailsCount by one.
-      //  Find the span with an id of tails-chosen. Replace the html inside of the span with the tailsCount.
+  
+ 
       //  Find the div with an id of guess. Update it with the word "Tails" bolded.
-      //  Call the flipThatCoin function and pass value 1 into it.
+     
+          //  Increment tailsCount by one.
       tailsCount++;
+           //  Find the span with an id of tails-chosen. Replace the html inside of the span with the tailsCount.
       $("#tails-chosen").text(tailsCount);
-      $("#guess").html("<b>Tails</br>");
+      $("#guess").html("<b>Tails</b>");
+       //  Call the flipThatCoin function and pass value 1 into it.
       flipThatCoin(1);
 
     });
