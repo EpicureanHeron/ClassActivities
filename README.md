@@ -802,6 +802,10 @@ code below uses the 1000 is millisecond and the setTimeout function
 
 clearTimeout stops/clears a timeout
 
+below is an example of "inline lambda function" EG creating a function to do this.
+
+
+
 ```
 var someTimeOut = setTimeout(function(){
     alert("Alert #1")
@@ -816,4 +820,39 @@ Did coin flip game
 
 Did simpleTimer
 
+the example above shows how you can "inline" a function, below is basically how  you can use setTimeout and just pass it the function name without the () at the end
+```
+setTimeout(FUNCTION,MILLISECONDS)
 
+setTimeout(functionName, 5000)
+```
+
+## Example lambda can be used to pass a function called within the inline a variable IE
+
+```
+var someTimeOut = setTimeout(function(){
+    someFunction(parameter)
+
+
+}, 1000);
+
+
+somefunction(parameter) {
+    parameter + 1
+}
+
+```
+
+The above works when the function you are configuring to trigger after 1 second needs to have a parameter passed, 
+
+## you cannot do the below!!!
+
+```
+var someTimeOut = setTimeout(someFunction(parameter), 1000);
+
+somefunction(parameter) {
+    parameter + 1
+}
+
+
+```
