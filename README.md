@@ -856,3 +856,6 @@ somefunction(parameter) {
 
 
 ```
+
+## Stop watch
+
