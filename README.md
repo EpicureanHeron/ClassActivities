@@ -796,7 +796,24 @@ there are special rules for the variable THIS
 
 
 
+# 6/2/2018 Class Notes more javascript notes
+
+code below uses the 1000 is millisecond and the setTimeout function 
+
+clearTimeout stops/clears a timeout
+
+```
+var someTimeOut = setTimeout(function(){
+    alert("Alert #1")
 
 
+}, 1000);
+
+
+clearTimeout(someTimeout)
+```
+Did coin flip game
+
+Did simpleTimer
 
 
