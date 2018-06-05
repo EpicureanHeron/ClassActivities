@@ -859,3 +859,11 @@ somefunction(parameter) {
 
 ## Stop watch
 
+### This notes
+using function setInterval(), setTimeout, alert() all are attached to the window, SO if acting on variable which is defined in part by these sort of methods/functions then ... this refers to the WINDOW rather than an object.
+
+# career question, think about what does the " 30-60-90" look like...probably need to google this term
+# Geek for Geeks (website with potentially a lot of techinciai questions), binary tree
+
+# API, AJAX, JSON 6/5/2018
+

@@ -62,11 +62,11 @@ var stopwatch = {
     //creates div jquery object
     var newDiv = $("<div>")
     //creatse the toDisplay variable 
-    var toDisplay = "lap: " + stopwatch.lap + " time: "+ currentTime
+    var toDisplay = 
     //updates the newDiv jquery object with the dispaly between it's html
-    newDiv.html(toDisplay)
+    newDiv.html("lap: " + stopwatch.lap + " time: "+ currentTime)
     //appends the newDiv to the #laps
-    $("#laps").append(newDiv)
+    $("#laps").append("<div>" + "lap: " + stopwatch.lap + " time: "+ currentTime )
 
     //  TODO: Increment lap by 1. Remember, we can't use "this" here.
 
