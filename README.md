@@ -937,14 +937,32 @@ Asynchronous does not wait, other things can be done (starbucks where everyone o
 ```
 
 $.ajax({
-    some code
-})then(function(respone){
+    url: someUrl with API key,
+    method: "GET"
+
+}).then(function(respone){
 
 
 })
 
 ```
+If a method is not defined, use GET
 
 AJAX just starts...then does it when it can, but other options can be done while it is going on
 
 Ajax can make multiple calls but it is bound by the slowest
+
+
+So there is a "promise" (Nabil's term) which it returns SOMETHING then .then happens
+
+
+http://omdbapi.com/?t=Forrest+Gump&y=&plot=short&apikey=trilogy
+? begins the query
+
+t is the first criteria
+
+use + signs instead of spaces 
+
+& denotes another criteria 
+
+
