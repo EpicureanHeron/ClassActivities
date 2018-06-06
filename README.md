@@ -867,3 +867,84 @@ using function setInterval(), setTimeout, alert() all are attached to the window
 
 # API, AJAX, JSON 6/5/2018
 
+For an array of objects, it is assumed they are all the same. Note that for the initative tracker...Probaly should have a basic OBJECT where everything is defined. 
+
+
+## JSON (Javascript Object Notation)
+https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa/related?hl=en
+Above is a chrome plugin
+Nabil uses JSON Lint 
+
+API
+
+You don't get to chose how the functions or formatting are for anything you are doing that is held within the API
+
+Give some information back, probably in JSON format 
+
+.trim() gets rid of the stupid space after an entry such as "search term "
+
+API research questions:
+
+What is an API?
+an application programming interface (API) is a set of subroutine definitions, protocols, and tools for building application software. In general terms, it is a set of clearly defined methods of communication between various software components. A good API makes it easier to develop a computer program by providing all the building blocks, which are then put together by the programmer. 
+
+## What does API stand for?
+Application programming interface
+
+## What are some examples of APIs? (Find links to specific APIs)
+https://dev.npr.org/
+https://developer.target.com/
+https://developer.amazon.com/developer-publishing
+
+## What do these specific APIs allow you as a developer to do?
+
+https://developer.amazon.com/developer-publishing
+
+The Developer Publishing API is a RESTful API that helps you manage your Android app catalog by programmatically creating and updating apps on the Amazon Appstore. You can use the Developer Publishing API to integrate your app publishing processes with the Amazon Appstore on a whole new level.
+
+If you have a large Android app catalog, instead of publishing your apps one at a time using our developer console, you can programmatically upload thousands of apps, quickly and safely. The Developer Publishing API also enables you to more easily manage your catalog by submitting and updating your Android apps directly from your build systems without additional manual intervention.
+
+
+
+## API 
+
+If you want to build something that uses data, see if there is an API First
+
+If there is not, you have to do webscrapping (unstrusctured data). APIs are structured
+ 
+API RESTful (resource state transfer)
+
+REST is the key here: https://en.wikipedia.org/wiki/Representational_state_transfer
+
+Google Calendar API
+https://developers.google.com/calendar/overview 
+
+Metro Transit http://svc.metrotransit.org/ 
+
+HTTP Methods https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+Right now we are dealing with Gets and Post
+
+## ajax
+
+Synchronous vs Asynchoronous 
+
+Synchronous is akin to blocking, there is NOTHING else the system can be doing while that requeset is done 
+ 
+Asynchronous does not wait, other things can be done (starbucks where everyone orders and they get respones out of order)
+
+
+```
+
+$.ajax({
+    some code
+})then(function(respone){
+
+
+})
+
+```
+
+AJAX just starts...then does it when it can, but other options can be done while it is going on
+
+Ajax can make multiple calls but it is bound by the slowest
