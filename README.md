@@ -965,4 +965,16 @@ use + signs instead of spaces
 
 & denotes another criteria 
 
+class examples
+```
+function(obj){
+    console.log(obj.Runtime)
+    console.log(obj.Ratings[0].Source)
+    console.log(obj.Website)
+}
+```
+
+# 6/7/2018 Notes More Ajax and API
+
+
 
