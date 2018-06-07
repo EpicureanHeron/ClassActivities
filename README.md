@@ -976,5 +976,6 @@ function(obj){
 
 # 6/7/2018 Notes More Ajax and API
 
+API: set of predefined routines, code snippets, and tools for building software applications
 
-
+APIs often bridge between different components
