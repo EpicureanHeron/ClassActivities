@@ -990,7 +990,28 @@ useful way to convert JSON  https://developer.mozilla.org/en-US/docs/Web/JavaScr
 ```
 JSON.stringify(JSONthing)
 ```
-Prevents form from trying to submit!
+Prevents form from trying to submit! 
 ```
 event.preventDefault();
 ```
+
+uses of attr
+
+The below assigns the data-value = "MonsterMash"
+```
+$("<button>").attr("data-value", "MonsterMash")
+
+```
+The below calls the attr to return the value of whatever is assigned
+```
+$("<button>")attr("data-value")
+```
+Pulls a the attribute value from whatever (probably an html/jquery object)
+
+the below val call should give 1000
+```
+<div id="mainDiv" value="1000" > </div>
+
+$("#mainDiv").val()
+```
+
