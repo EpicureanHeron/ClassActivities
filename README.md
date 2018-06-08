@@ -990,3 +990,7 @@ useful way to convert JSON  https://developer.mozilla.org/en-US/docs/Web/JavaScr
 ```
 JSON.stringify(JSONthing)
 ```
+Prevents form from trying to submit!
+```
+event.preventDefault();
+```
