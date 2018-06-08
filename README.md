@@ -979,3 +979,14 @@ function(obj){
 API: set of predefined routines, code snippets, and tools for building software applications
 
 APIs often bridge between different components
+
+Full stack discussion
+    Seems like between the back end and the frontend, you could think of their relationship as communicating as an API 
+
+book rec: cool artists steal
+
+useful way to convert JSON  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+
+```
+JSON.stringify(JSONthing)
+```
