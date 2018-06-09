@@ -1053,4 +1053,5 @@ Nabil recommend 10 hour a month of learning outside of work will keep you "very 
 
 A server may serve up parts of the API, but the API does not really live anywhere. IT is a fairly abstract concept but it is a framework
 
-Going 
+CRUD: + Create, Read, Update, and Delete
+    Basic IDEA behind APIs
