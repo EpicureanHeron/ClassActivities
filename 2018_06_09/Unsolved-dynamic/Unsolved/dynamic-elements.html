@@ -10,6 +10,8 @@
   <button data-animal="cat">meow</button>
   <button data-animal="dog">woof</button>
   <button data-animal="bird">chirp</button>
+  <button data-animal="porcupine">poke</button>
+  <button data-animal="platypus">mistake!</button>
   <div id="gifs-appear-here">
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -47,6 +49,7 @@
         var animalImage = $("<img>")
         // Set the image's src to results[i]'s fixed_height.url.
         animalImage.attr("src", results[i].images.fixed_height.url)
+        animalImage.attr("alt", "animal-image")
         // Append the p variable to the animalDiv variable.
         animalDiv.append(p)
         // Append the animalImage variable to the animalDiv variable.
