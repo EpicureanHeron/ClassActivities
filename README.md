@@ -1015,3 +1015,38 @@ the below val call should give 1000
 $("#mainDiv").val()
 ```
 
+You can use a "trash variable" as in you just set up something like
+
+```
+pOne = $(<p>).html("text!")
+
+$("#someID").append(pOne)
+
+pOne = $("<p>").html("Someother text!")
+
+$("#someID").append(pOne)
+
+```
+
+
+# 6/9/2018 Class Notes
+
+Book List...
+
+Javascript and jQury by Jon Duckett
+
+Javascript Bible by Danny Goodman
+
+You Don't Know JS series by Kyle Simpson
+
+Composing Software by Eric Elliott
+
+The Clean Coder by Robert Martin
+
+Imposter syndrom is a REAL THING
+
+Nabil recommend 10 hour a month of learning outside of work will keep you "very sharp", that is 2.5 hours a month. These can be Medium articles
+
+## API
+
+A server may serve up parts of the API, but the API does not really live anywhere. IT is a fairly abstract concept but it is a framework
