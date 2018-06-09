@@ -1031,6 +1031,8 @@ $("#someID").append(pOne)
 
 # 6/9/2018 Class Notes
 
+BUILDING A NEW YORK TIMES SEARCH APPLICATION TODAY
+
 Book List...
 
 Javascript and jQury by Jon Duckett
@@ -1050,3 +1052,5 @@ Nabil recommend 10 hour a month of learning outside of work will keep you "very 
 ## API
 
 A server may serve up parts of the API, but the API does not really live anywhere. IT is a fairly abstract concept but it is a framework
+
+Going 
