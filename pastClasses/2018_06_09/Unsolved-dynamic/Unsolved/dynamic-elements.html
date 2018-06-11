@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Animal Buttons</title>
+</head>
+
+<body>
+  <button data-animal="cat">meow</button>
+  <button data-animal="dog">woof</button>
+  <button data-animal="bird">chirp</button>
+  <button data-animal="porcupine">poke</button>
+  <button data-animal="platypus">mistake!</button>
+  <div id="gifs-appear-here">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // var searchParam = prompt("Search?")
+    // var beginDate = prompt("begin date?")
+    // var endDate = prompt("end date?")
+
+    var searchParam = "Test"
+    var beginDate = "20180608"
+    var endDate = "20180609"
+     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+     
+     queryURL += '?' + $.param({
+    'api-key': "41d36c380c8049df915079ce5452390a",
+    'q': searchParam,
+    'begin_date': beginDate,
+    'end_date': endDate,
+    'length': 5
+    //
+    })
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+
+        console.log(response)
+        for (i = 0; i < response.response.docs.length; i ++){
+
+       // Step 1: Run this file, click a button, and see what the response object looks like in the browser's console.
+        // Open up the data key, then open up the 0th, element. Study the keys and how the JSON is structured.
+        
+          //headline 
+        console.log(response.response.docs[i].headline.main)
+          //publisher
+        console.log(response.response.docs[i].source)
+          //date-time
+        console.log(response.response.docs[i].pub_date)
+          //link
+        console.log(response.response.docs[i].web_url)
+
+        }
+        
+     
+        
+      });
+
+  </script>
+</body>
+
+</html>
