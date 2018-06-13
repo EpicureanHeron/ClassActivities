@@ -1057,6 +1057,41 @@ CRUD: + Create, Read, Update, and Delete
     Basic IDEA behind APIs
 
 # 6/12/2018 
-To Do List
+
+## 7.1 - Introduction to Client-Side Storage
+
+To Do List activity 
 
 State and GOogle Doc example
+
+Stuff to keep at a local level: saving passwords and profile stuff potentially
+
+Client vs Server
+
+Client
+
+- Offline access 
+ - Progress Web App (PWA), downloadable websites, lightweight, can be used offline and do push notifications. Only like 35 lines of flipping code
+  - https://en.wikipedia.org/wiki/Progressive_Web_Apps
+- Decentralized
+- caching (in PWAs you can define what it needs to render, (css,html, etc) this then is able to work)
+
+Server
+- Centralized
+- Collobration  
+- Analytics
+
+https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+
+
+local storage is a thing!!!
+
+Like a browser API.
+
+You can only see it the web developer kit, under application, local storage
+```
+localStorage.setItem("Stuff", someVar);
+localStorage.getItem("Stuff"); // this would acees the someVar (key and item)
+localStorage.clear();
+
+```
