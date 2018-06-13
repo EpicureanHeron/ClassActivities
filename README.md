@@ -1083,7 +1083,7 @@ Server
 
 https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
 
-
+## Local Storage
 local storage is a thing!!!
 
 Like a browser API.
@@ -1097,3 +1097,23 @@ localStorage.getItem("Stuff"); // this would acees the someVar (key and item)
 localStorage.clear();
 
 ```
+
+## Session Storage
+
+Session is more restrictive and time limited. Local Storage is longer and persistence https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage 
+
+Putting in credit card info while the tab is open, but gets rid of it when the window is closed. Passwords.
+
+When to use Session vs Local: Use case dictates what to use
+
+Think of session vs local in terms of phone
+
+Pretty much the same as localStorage however when it comes to interacting with the information and setting it.
+
+```
+sessionStorage.setItem("name", name)
+sessionStorage.getItem("name")
+sessionStorage.clear()
+
+```
+
