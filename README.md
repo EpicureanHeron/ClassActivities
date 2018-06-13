@@ -1089,6 +1089,8 @@ local storage is a thing!!!
 Like a browser API.
 
 You can only see it the web developer kit, under application, local storage
+
+it acts like an object
 ```
 localStorage.setItem("Stuff", someVar);
 localStorage.getItem("Stuff"); // this would acees the someVar (key and item)
