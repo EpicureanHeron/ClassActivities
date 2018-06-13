@@ -1055,3 +1055,8 @@ A server may serve up parts of the API, but the API does not really live anywher
 
 CRUD: + Create, Read, Update, and Delete
     Basic IDEA behind APIs
+
+# 6/12/2018 
+To Do List
+
+State and GOogle Doc example
