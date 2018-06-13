@@ -1117,3 +1117,19 @@ sessionStorage.clear()
 
 ```
 
+## cookies
+
+OG way of doing client side, can be given by server 
+
+it was an attempt to verify clients by server 
+
+cookies are just strings, very flexible and can be a pain in the butt to work with
+
+You have to parse them yourself because it is just a string and whatever schema you want to use
+
+You can't just clear cookies through javascript, you have to expire the page by setting it to a date in the 1970s ... because...yeah. They persist a lot, soooo bad actors love them.
+
+## To Do List 
+
+Best practice is always to pull in an external list (if in local storage )
+
