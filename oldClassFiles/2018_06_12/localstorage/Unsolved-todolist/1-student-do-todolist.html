@@ -39,48 +39,83 @@
 
     // Create an initial toDoCount variable
     var toDoCount = 0;
+   // var savedData = localStorage.getItem("toDoList")
+   // localStorage.clear()
+
+   // console.log(savedData)
     //  On Click event associated with the add-to-do function
+    function renderPage() {
+      $("#to-dos").empty()
+     // localStorage.setItem("toDoList", "five")
+     //var testArr = ["To Do 1", "To Do 2", "to do 3"]
+     //console.log(testArr)
+     //var convertedArr = JSON.stringify(testArr)
+     //console.log(convertedArr)
+
+     //localStorage.setItem("toDoList", convertedArr)
+     var savedData = localStorage.getItem("toDoList")
+    
+      console.log(savedData)
+     if (!savedData) {
+       //Creates an empty array
+       var newToDo = []
+       //makes it a string
+       JSON.stringify(newToDo)
+       //sets it to local storage
+       localStorage.setItem("toDoList", newToDo);
+     }
+     else {
+      //grabs the data and parses from the data back into an array! Magic
+      var parsedToDo = JSON.parse(savedData)
+       for (i = 0; i < parsedToDo.length; i ++) {
+          var newP = $("<p>");
+          
+          newP.attr("id", "item-" + i)
+      
+          newP.append(parsedToDo[i])
+
+          var newButton = $("<button>")
+          newButton.attr("data-to-do", toDoCount)
+          newButton.addClass("checkbox")
+          newButton.append("x")
+          newP.prepend(newButton)
+          $("#to-dos").append(newP)
+       }
+     }
+    }
+
+    renderPage()
 
     $("#add-to-do").on("click", function(event) {
-      // prevent form from submitting
       event.preventDefault();
+      
+      // prevent form from submitting
+     var toDoList = localStorage.getItem("toDoList")
 
+      if(toDoList){
+        console.log(typeof toDoList)
+        toDoList = JSON.parse(toDoList)
+        console.log(typeof toDoList)
+      }
+      else {
+        var toDoList = []
+      }
+      
+      
+     
+      //var toDoStored = JSON.parse(localStorage.getItem("toDoList"))
       // Get the to-do "value" from the textbox and store it a variable
       var textbox = $("#to-do").val().trim();
-      console.log(textbox);
-
-      // Create a new variable that will hold a "<p>" tag.
-      var newP = $("<p>");
-      // Then give it an ID in the following form:
-      newP.attr("id", "item-" + toDoCount)
-      // "item-4" or "item-3" or "item-99", where the number is equal to toDoCount.
-      // Then append the to-do "value" as text to this <p> element.
-      newP.append(textbox)
-//i added this
-    //$("#to-dos").append(newP)
-
-
-      // Create a button with unique identifiers based on what number it is in the list. Again use jQuery to do this.
-      var newButton = $("<button>")
-      // Give your button a data attribute called data-to-do and a class called "checkbox".
-      newButton.attr("data-to-do", toDoCount)
-      newButton.addClass("checkbox")
-      // Lastly append the letter X inside.
-      newButton.append("x")
       
+      toDoList.push(textbox)
 
-      // Append the button to the to do item
-      newP.prepend(newButton)
+      console.log(toDoList)
 
-      // Add the button and toDoItem to the to-dos div
-      $("#to-dos").append(newP)
+      toDoList = JSON.stringify(toDoList)
 
-      // Clear the textbox when done
+      localStorage.setItem("toDoList", toDoList)
       
-      $("#to-do").val("")
-
-      // Add to the toDoCount
-      toDoCount ++
+      renderPage()
 
     });
 
@@ -88,13 +123,21 @@
     //  (NOTE: Pay attention to the unusual syntax here for the click event.
     //  Because we are creating click events on "dynamic" content, we can't just use the usual "on" "click" syntax.)
     $(document.body).on("click", ".checkbox", function() {
+      console.log("Clicked")
+    var toDoList = localStorage.getItem("toDoList");
 
-      // Get the number of the button from its data attribute and hold in a variable called  toDoNumber.
-     var removedToDo = $(this).attr("data-to-do")
-     console.log(removedToDo)
+    var newArray = JSON.parse(toDoList)
+    
+    var indexToRemove = $(this).attr("data-to-do")
 
-      // Select and Empty the specific <p> element that previously held the to do item number.
-    $("#item-" + removedToDo).remove()
+    newArray.splice(indexToRemove, 1)
+
+    newArray = JSON.stringify(newArray)
+
+    localStorage.setItem("toDoList", newArray)
+
+    renderPage()
+
 
     });
   </script>
