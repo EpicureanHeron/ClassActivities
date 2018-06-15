@@ -38,7 +38,7 @@
     //  ============================= START CODING BELOW! =============================================
 
     // Create an initial toDoCount variable
-    var toDoCount = 0;
+    //var toDoCount = 0;
    // var savedData = localStorage.getItem("toDoList")
    // localStorage.clear()
 
@@ -54,7 +54,7 @@
 
      //localStorage.setItem("toDoList", convertedArr)
      var savedData = localStorage.getItem("toDoList")
-    
+   // localStorage.clear()
       console.log(savedData)
      if (!savedData) {
        //Creates an empty array
@@ -123,7 +123,7 @@
     //  (NOTE: Pay attention to the unusual syntax here for the click event.
     //  Because we are creating click events on "dynamic" content, we can't just use the usual "on" "click" syntax.)
     $(document.body).on("click", ".checkbox", function() {
-      console.log("Clicked")
+      
     var toDoList = localStorage.getItem("toDoList");
 
     var newArray = JSON.parse(toDoList)

@@ -1133,3 +1133,32 @@ You can't just clear cookies through javascript, you have to expire the page by 
 
 Best practice is always to pull in an external list (if in local storage )
 
+# 6/14/2018 Firebase
+
+User Story: who (demographically) will be using your application
+
+Translating the user story into an app is what developers do 
+
+Rock paper scissors: probably dictated by two different databases. First person logs in and it associated with database1 (DB1), second person who jumps on is associated with DB2. THEN person 1 needs to update their DB1 BEFORE DB2 can be udpated (or the options to display that info is offered up )
+
+Stores data to the databse. You define the database as something something firebase
+```
+database.ref().set({
+    clickCount: clickCounter
+})
+
+```
+## Databases
+
+SQL
+- Oracle
+- Microsoft Oracle
+- MySQL
+
+no SQL
+- MongoDB
+- REDIS
+- firebase is probably key value store
+
+
+https://firebase.google.com/docs/reference/js/
