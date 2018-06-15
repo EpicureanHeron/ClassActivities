@@ -35,6 +35,8 @@ database.ref().on("value", function(snapshot) {
 
     highPrice = snapshot.val().highPrice
     highBidder = snapshot.val().highBidder
+    
+    highBidder = parseFloat(highBidder)
     // highPrice = ...
     // highBidder = ...
 
@@ -75,6 +77,8 @@ $("#submit-bid").on("click", function(event) {
   // Get the input values
   var bidderName = $("#bidder-name").val().trim()
   var bidderPrice = $("#bidder-price").val().trim()
+
+  bidderPrice = parseFloat(bidderPrice)
 
   // Log the Bidder and Price (Even if not the highest)
   if (bidderPrice > highPrice) {
