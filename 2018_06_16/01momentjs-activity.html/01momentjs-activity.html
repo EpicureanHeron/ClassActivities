@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Moment JS Exercises</title>
+
+</head>
+
+<body>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Link to Moment.js should go here -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>```
+
+  <script>
+    var randomDate = "02/23/1999";
+
+    // Using scripts from moment.js write code below to complete each of the following.
+    // Console.log to confirm the code changes we made worked.
+
+
+    // 1 ...to convert the randomDate into three other date formats
+    var format1 = moment(randomDate, "MM/DD/YYYY").format("DD:MM:YY")
+    var format2 = moment(randomDate, "MM/DD/YYYY").format("MM/YYYY")
+    var format3 = moment(randomDate, "MM/DD/YYYY").format("YY")
+    console.log(format1);
+    console.log(format2);
+    console.log(format3);
+    // 2 ...to determine the time in years, months, days between today and the randomDate
+    var randomDateMoment = moment(randomDate, "MM/DD/YYYY")
+   
+    var now = moment()
+    console.log(randomDateMoment)
+
+    console.log(now.diff(randomDateMoment, 'years'))
+    console.log(now.diff(randomDateMoment, 'months'))
+    console.log(now.diff(randomDateMoment, 'days'))
+
+    console.log(moment(randomDate).toNow());
+    //console.log(moment(randomDateMoment.subtract(now,"YY")))
+
+    // 3 ...to determine the number of days between the randomDate and 02/14/2001
+
+    var anotherDate =  "02/14/2001"
+    var anotherDateMoment = moment(anotherDate, "MM/DD/YYYY")
+
+    console.log(anotherDateMoment.diff(randomDateMoment, 'days'))
+    // 4 ...to convert the randomDate to unix time (be sure to look up what unix time even is!!!)
+
+    var randomDateUnix = moment(randomDate, "MM/DD/YYYY")
+    console.log(randomDateUnix.unix())
+    console.log(moment(randomDate).format("X"))
+    // 5 ...to determine what day of the week and what week of the year this randomDate falls on.
+
+    // If you finish early...
+    // Start creating HTML inputs and then redisplay the dates using moment.js elsewhere on the page.
+  </script>
+
+</body>
+
+</html>
