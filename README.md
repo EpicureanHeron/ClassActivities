@@ -1162,3 +1162,57 @@ no SQL
 
 
 https://firebase.google.com/docs/reference/js/
+
+# 6/16/2018 Firebase Application Building
+
+## Firebase Review
+
+```
+// creates an instance of a firebase database
+database = firebase.database()
+//assigns values to the databse
+.set({})
+//grabs the data from a folder (?). Specifies folders
+.ref()
+//real time listener, when the data changes, (probably via set or w/e), changes things Locally! 
+.on("value", function () {})
+```
+
+
+Fields: Employee Name, Role, Start Date, Months Work (some integer), Monthly Rate (some interger), Total Billed (months workd * monthly Rate)
+
+FORM fields: Employee Name, Role, Start Date, MOnthly Rate + SUBMIT button 
+
+Alerts when enter is hit 
+
+
+```
+database.ref().push({
+
+    
+})
+
+```
+
+```
+//sets the time of the data inputed
+
+dataAdded: firebase.database.ServerValue.TIMESTAMP
+
+
+```
+orderByChild by the field dataAdded 
+```
+dataRef.ref().orderBychild("dataAdded").limitToLast(1).("child_added", function(snapshot){
+
+    $("#namedisplay").html(snapshot.val().name)); 
+
+})
+```
+
+dataRef.ref().on("child_added",function(childSnapshot) {
+
+
+})
+
+```
