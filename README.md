@@ -1303,3 +1303,65 @@ This must be commented on by  whoever is committing
 6. push your working branch to github
 `git push origin my-new-branch`
 7. and finally create a pull request on github to merge `my-new-branch` into master
+
+
+# 6/21/2018
+
+Branching
+
+You can branch a branch, etc
+
+branches on github that aren't on local machine, do 
+```
+git fetch
+```
+
+```
+git checkout SOMEBRANCHNAME
+```
+
+cheks out and sets the branch to 
+
+SUPER USEFUL: https://github.com/joshnh/Git-Commands
+
+## Project Management 
+
+- SCRUM 
+- Agile
+https://www.cprime.com/resources/what-is-agile-what-is-scrum/
+- waterfall has gone to the wayside
+
+MVP = mininum viable product, first working product that manages to hit the recommendation
+
+IDentify and prioritize essentail user stories 
+
+"as a _______ I want to be able to _____" 
+
+KANBAN is effecitvely a trello thing
+
+Stand ups:
+
+"What i'm working on, What I'm hoping to get done today, and blockers"
+
+
+```
+
+## Students Do: First Stand-up
+
+* In this activity you will take part in your first stand-up with your group mates. This will make sure everyone is on the same page with what they are working on and everyone gets help they might need.
+
+## Instructions
+
+* Before your first stand-up, each member of the team should go through the To Do column of the Project Board and self-assign at least one issue.
+
+ * To do this, click on the issue and on the right choose “self-assign”.
+
+* Everyone should have a clear idea of what they intend to accomplish today. Now it’s time for your first stand-up!
+
+* Stand if you are able - yep, stand-ups take place standing; this helps to ensure that the meetings are short and to the point.
+
+* Each member of the team should say what they did yesterday, what they plan to do today, and what, if anything, is blocking their progress.
+
+* Stand-ups should be held **daily** from this point forward - yes even days that you don’t have class (use Slack).
+
+```
