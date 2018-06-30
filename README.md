@@ -1365,3 +1365,13 @@ Stand ups:
 * Stand-ups should be held **daily** from this point forward - yes even days that you don’t have class (use Slack).
 
 ```
+
+
+# 6/23/2018
+
+CICD: https://en.wikipedia.org/wiki/CI/CD
+
+Get MVP, then select feature to add, test it , boom go to prod
+
+## Deployment
+Master Branch of Group Project will be deployed...not sure WHERE yet, github 
