@@ -1422,3 +1422,22 @@ node some.js 45 88
 ```
 
 if that some.js has a process.argv in it, the 45 and 88 would be process.argv[2] and process.argv[3] respectively 
+
+## Modules and Modular Design
+
+Design concept: Seperations of concerns
+-does this THING make since in this MODULE? 
+```
+module.exports = {
+    key: value,
+    key: value
+}
+
+```
+
+Telling the file which files to import
+
+```
+require("some/file/path")
+```
+
