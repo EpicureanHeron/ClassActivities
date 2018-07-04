@@ -1375,3 +1375,50 @@ Get MVP, then select feature to add, test it , boom go to prod
 
 ## Deployment
 Master Branch of Group Project will be deployed...not sure WHERE yet, github 
+
+# 07/03/2018 
+
+## Server Side stuff
+
+key concept: modularization 
+
+Transfer protocols (http/https) ubiquitious and easy to use
+
+a server is not necessarily a web server
+
+Web client = browser 
+
+REST vs SOAP 
+
+Downsides of server
+-latency
+-security
+-packet last
+
+internet is based on "best effort"
+
+## node.js
+
+open source , cross-platform
+
+one underlies 
+
+Why node.js
+1. re-uses javascript
+2. it's easily extendable (npm) NODE PACKAGE MANAGER
+3. fast implementation
+4. single threaded async model (meaning it can handle multiple request at the same type) THREADED based on CPUs
+    -so if you have 4 threaded CPU, it can only handle 1 request at a time
+    -KUBERNETES allows for horizontal expansion and utilization of other threads (all 4)
+    -back to point 4, you may have to WAIT if there is a queue basically
+
+
+
+
+for console.log(process.argv) it is "progressive" I think, so the values that proceed the command like
+
+```
+node some.js 45 88
+```
+
+if that some.js has a process.argv in it, the 45 and 88 would be process.argv[2] and process.argv[3] respectively 
