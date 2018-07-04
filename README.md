@@ -1437,7 +1437,28 @@ module.exports = {
 
 Telling the file which files to import
 
+
 ```
 require("some/file/path")
 ```
 
+## Louis shows how to iterate over an object by its keys
+```
+var myObj = {
+ a: 1,
+ b: 2,
+ c: 3
+}
+var keys = Object.keys(myObj)
+// ['a', 'b', 'c']
+
+for (var i = 0; i < keys.length; i++) {
+ console.log('key is: ' + keys[i] + ' value is: ', myObj[keys[i]])
+}
+
+// what will be printed here?
+
+// key is: a value is:  1
+// key is: b value is:  2
+// key is: c value is:  3
+```
