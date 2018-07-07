@@ -1563,11 +1563,23 @@ if it does not and you want to create a new new package.json. This will run a lo
 npm init
 ```
 
+Can call out one library as well
+```
+npm install request
+```
+
+can install at global level (NOT ADVISED)
+```
+npm install -g request
+```
+### Best way to work is to have a working directory with its OWN node_modules established via npm 
+
+
 
 ## Requests
 
 ``` 
-var request = require("request)
+var request = require("request")
 
 request("someURL", function(error, response, body){
 
@@ -1577,6 +1589,33 @@ request("someURL", function(error, response, body){
 })
 
 ```
+
+## MVP Thinnest Vertical Slice and Agile Development
+
+MVP: Building the minimal projduct
+
+"thinnest vertical slice"
+
+
+
+User Stories and agile
+
+### Layers
+
+- Frontend
+
+- App
+
+- API 
+
+- Database
+
+And building just the PORTION of each layer to make it functional for that small slice
+
+
+## PLAD and project management
+Product, Agile, DevOps, and Lean
+https://mxmw2016.sched.com/event/7WeU/plaid-product-lean-agile-and-devops-panel
 
 ## gitIgnore
 can select files to ignore (especially for all the node stuff, it would be a lot to push up )
