@@ -1462,3 +1462,76 @@ for (var i = 0; i < keys.length; i++) {
 // key is: b value is:  2
 // key is: c value is:  3
 ```
+
+# 7/7/2018 Class
+
+## More Node Stuff
+
+node.js is the "javascript engine" in Google Chrome and wrapping it slightly differently. This is running a viritual machine called V8. Viritual machines running the code is super powerful, it doesn't care WHAT CPU or archetecture that the machine is running. 
+
+Going to cover more NODE stuff in regards to working with files, also requests
+
+You can name your imports WHATEVER you want, but you have to import them the way the import has 
+
+
+## Writing a file 
+```
+var fs = require("fs")
+
+fs.writeFile("movies.txt", "inception, die hard, fucnition(err){
+    if (err) {
+        return console.log(err)
+    }
+    console.log("movies.txt was updated!")
+})
+
+```
+## Reading a file
+usually takes a "utf8" as a second argument 
+
+reading a file is an ASYNC function, so it MIGHT not run in the order you anticipate (there is a syncread out there)
+```
+var fs = require("fs")
+
+fs.readFile("movies.txt, "utf8", function(error, data){
+
+    if(error) {
+        return console.log(error);
+    }
+    console.log(data)
+
+    var dataArr = data.split(",")
+
+    console.log(dataArr):
+
+});
+```
+
+## Appending file
+super useful for logging
+
+takes text file, the thing to add, and a callback function
+```
+var fs = require("fs")
+
+fs.appendFile(textFile, "hello kitty", function(err){
+    if(err){
+        return console.log("error:)
+    }
+})
+```
+
+
+## switch statements
+```
+switch(somethingYouWantToCheck) {
+    case "something":
+    //do stuff
+    break;
+    case "anotherThing":
+    //do stuff
+    break;
+
+}
+
+```
