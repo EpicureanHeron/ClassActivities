@@ -1575,7 +1575,6 @@ npm install -g request
 ### Best way to work is to have a working directory with its OWN node_modules established via npm 
 
 
-
 ## Requests
 
 ``` 
@@ -1598,8 +1597,6 @@ MVP: Building the minimal projduct
 
 
 
-User Stories and agile
-
 ### Layers
 
 - Frontend
@@ -1615,7 +1612,10 @@ And building just the PORTION of each layer to make it functional for that small
 
 ## PLAD and project management
 Product, Agile, DevOps, and Lean
+
 https://mxmw2016.sched.com/event/7WeU/plaid-product-lean-agile-and-devops-panel
 
 ## gitIgnore
 can select files to ignore (especially for all the node stuff, it would be a lot to push up )
+
+https://github.com/harthur/brain/issues/25
