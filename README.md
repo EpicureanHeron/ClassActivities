@@ -1523,6 +1523,10 @@ fs.appendFile(textFile, "hello kitty", function(err){
 
 
 ## switch statements
+
+the breaks are important
+
+Switch statements are good at being concise so, leverage that with functions 
 ```
 switch(somethingYouWantToCheck) {
     case "something":
@@ -1531,7 +1535,48 @@ switch(somethingYouWantToCheck) {
     case "anotherThing":
     //do stuff
     break;
-
 }
+```
+
+## Why use node.js
+
+Could just have database opened up to public
+
+- In general having that exposed to the public is bad
+- Seperations of concerns
+- "build out business domain" 
+
+Node is used a lot of APIs and "aggressive" web content. It sits between the client and server
+
+## package.json and NPM
+
+Probably see package.json in most projects
+Version lock/package lock is very helpful 
+
+run the below if a package.json exists in the directory
+```
+npm install
+```
+if it does not and you want to create a new new package.json. This will run a lot of stuff on the CLI
 
 ```
+npm init
+```
+
+
+## Requests
+
+``` 
+var request = require("request)
+
+request("someURL", function(error, response, body){
+
+    if(!error && response.statusCode === 200) {
+        console.log(body)
+    }
+})
+
+```
+
+## gitIgnore
+can select files to ignore (especially for all the node stuff, it would be a lot to push up )
