@@ -1623,7 +1623,7 @@ https://github.com/harthur/brain/issues/25
 
 # Class 07/10/2018 MORE NODE
 
-Interview stuff:
+## Interview stuff:
 
 least common subset (lcs problem)
 
@@ -1631,5 +1631,27 @@ barren land problem
 
 binary search tree
 
-
+---------------------------
 Comparators and maps 
+
+
+Best Practice
+
+createa new direcotry
+then do an
+```
+ npm init
+```
+run through all all the questions and enter what you need
+
+This should generate a package.json 
+
+then you can install modules 
+```
+npm i requests
+```
+
+
+(the version number works as follows 1.0.2 where 1 is the major release, 0 is the minor release, and 2 is the bug fix)
+
+
