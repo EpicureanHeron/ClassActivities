@@ -1619,3 +1619,17 @@ https://mxmw2016.sched.com/event/7WeU/plaid-product-lean-agile-and-devops-panel
 can select files to ignore (especially for all the node stuff, it would be a lot to push up )
 
 https://github.com/harthur/brain/issues/25
+
+
+# Class 07/10/2018 MORE NODE
+
+Interview stuff:
+
+least common subset (lcs problem)
+
+barren land problem
+
+binary search tree
+
+
+Comparators and maps 
