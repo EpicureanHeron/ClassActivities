@@ -39,6 +39,9 @@ function Character(name, profession, gender, age, strength, hp) {
     this.age = age;
     this.strength = strength;
     this.hp = hp;
+
+    //IN LIEU OF THE CONSOLE.LOG Could BE REWRITTEN WITH JSON.STRINGIFY WHICH WILL SHOW THE KEY AND THE VALUE FOR EVERYTHING IN A JSON OBJECT
+    //
     this.printStats = function() {
         console.log("------------------------------------------")
         console.log("Name: " + this.name)

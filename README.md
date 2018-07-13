@@ -1659,7 +1659,7 @@ npm i requests
 
 Seperation of concerns: "Coupling" and "Decoupling" when it comes to changing something or breaking out a function from the code (its context)
 
-
+Concerns and encupsulation: who OWNS the thing (a method within the object which checks the objects HP to see if it is alive seems reasonable to be a method rather than a FUNCTION outside of the code)
 Constructors can create objects
 
 Constructors are used in Object Oriented Programming (OOP)
@@ -1707,3 +1707,16 @@ Notes on syntax differences
 
 Javascript is SORTA OOP but it will disappoint when it comes to inheritance 
 
+You can add properties/functions to a constructed objects 
+
+```
+
+dog.fetch = function() {
+    console.log("ONLY THROW, DON'T TAKE")
+}
+
+dog.breed = "Yellow Lab";
+dog.neutered = true;
+dog.legs = 3;
+
+```
