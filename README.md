@@ -1655,3 +1655,55 @@ npm i requests
 (the version number works as follows 1.0.2 where 1 is the major release, 0 is the minor release, and 2 is the bug fix)
 
 
+# 7/12/2018 Constructors 
+
+Seperation of concerns: "Coupling" and "Decoupling" when it comes to changing something or breaking out a function from the code (its context)
+
+
+Constructors can create objects
+
+Constructors are used in Object Oriented Programming (OOP)
+
+Note the syntax difference between creating an object
+## object example
+```
+var dogs = {
+    raining: true,
+    noise: "Woof!",
+    makeNoise: function() {
+        
+        if(this.raining === true){
+
+            console.log(this.noise)
+         }
+    }
+}
+
+```
+
+
+## constructor example
+```
+function Animal(raining, noise) {
+    this.raining = raining;
+    this.noise = noise;
+    this.makeNoise = function() {
+
+        if(this.raining === true){
+        console.log(noise)
+
+        }
+    }
+}
+var dog =  new Animal(true, "woof")
+var cat = new Animal(true, "meoooow")
+var bird = new Animal(false, "chirp")
+```
+
+Notes on syntax differences
+- this.[property] = [property] in constructor rather than [key]: [value] in an object
+- the creation of a new object from that constructor utilizes the "New" and passing of properties
+- the function that is the constuctor typically has a capital letter, Animal, 
+
+Javascript is SORTA OOP but it will disappoint when it comes to inheritance 
+
