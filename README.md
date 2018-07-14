@@ -1755,3 +1755,6 @@ start with something like count = 0
 check if count is less than some number, if less than, do someAjax promise - then something happens, increment up count and call the ajax promise again
 
 recusion is something calling itself, this is a rescursion LOOP
+
+## Recursion Arrays 
+
