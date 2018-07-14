@@ -27,7 +27,7 @@ for (i  = 0; i < process.argv.length; i ++ ){
     }
 }
 console.log(movieNameArr)
-longerMovieName = movieNameArr.join("+");
+longerMovieName = movieNameArr.split(' ').join('+');
 
 
 // Then run a request to the OMDB API with the movie specified

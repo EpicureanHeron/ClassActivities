@@ -1720,3 +1720,38 @@ dog.neutered = true;
 dog.legs = 3;
 
 ```
+
+# 7/14/2018 Constructor and Prototypes
+
+prototype applies to all the objects built by constructor, can be done outside of the constructor and everything created by the constructor I think gets access to it
+```
+function Animal(raining, noise) {
+    this.raining = raining;
+    this.noise = noise;
+    this.makeNoise = function() {
+
+        if(this.raining === true){
+        console.log(noise)
+
+        }
+    }
+}
+var dog =  new Animal(true, "woof")
+
+Animal.prototype.addition = function(){
+    var firstNumber = 1
+    var secondNumber =2 
+    var sum = firstNumber + secondNumber
+    return sum
+}
+```
+## Iterative vs Recursive 
+Cannot just a for loop for async things, you must use recursion to make that promise THEN do whatever THEN make that same promise again.
+
+Recursive uses something like the Fibonnoci sequencing
+
+start with something like count = 0 
+
+check if count is less than some number, if less than, do someAjax promise - then something happens, increment up count and call the ajax promise again
+
+recusion is something calling itself, this is a rescursion LOOP
