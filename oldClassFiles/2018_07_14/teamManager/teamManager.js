@@ -46,7 +46,8 @@ function Player(name, position, offense, defense) {
 var starters = [];
 var subs = [];
 var team = [];
-var positions = ["forward", "back", "striker", "goalkeeper", "goalie"]
+var positions = ["forward", "back", "striker", "goalkeeper"]
+
 
 
 
@@ -62,17 +63,10 @@ var createPlayer = function () {
                 name: "name",
                 message: "Player's Name: "
             }, {
+                type: "list",
                 name: "position",
                 message: "Player's position: ",
-                validate: function (value) {
-
-                    if (positions.includes(value.toLowerCase())) {
-                        return true
-                    }
-                    else {
-                        return false
-                    }
-                }
+                choices: positions
             }, {
                 name: "offense",
                 message: "Player's Offensive Ability: ",
@@ -159,110 +153,154 @@ createPlayer();
 
 var teamScore = 0;
 var count = 0;
-var playBoo = false;
+
 
 function playgame() {
     if (count < 5) {
 
-
+        //sets randome numberes to offense and defense
         var offenseNum = Math.floor(Math.random() * Math.floor(20))
         var defenseNum = Math.floor(Math.random() * Math.floor(20))
         var teamOffense = 0;
         var teamDefense = 0;
-        var currentStarters = [];
+        // var currentStarters = [];
         //var currentStarters = ["no"];
         //var currentSubs = ["no"];
-        var currentSubs = [];
+        // var currentSubs = [];
 
+        //sets offense and defesnse sum for team current team starters
         for (i = 0; i < starters.length; i++) {
             teamOffense += starters[i].offense
             teamDefense += starters[i].defense
-            currentStarters.push(starters[i].name)
-        }
-        for (i = 0; i < subs.length; i++) {
-
-            currentSubs.push(subs[i].name)
+           
         }
 
-        if (offenseNum > teamDefense) {
-            teamScore--
-            console.log("Current score: " +teamScore)
-        }
-
-        if (defenseNum < teamOffense) {
+        
+        if (offenseNum < teamOffense) {
             teamScore++
-            console.log( "Current score: "+ teamScore)
+           
         }
 
+        if (defenseNum > teamDefense) {
+            teamScore--
+            
+        }
+
+        console.log("Current score: " +teamScore)
+
+        //PROMPT TO SEE IF A SUB IS NEEDED
         inquirer.prompt([
             {
-                type: "list",
-                message: "Add a sub?",
-                choices: currentSubs,
-                name: "currentSubs"
-
-
+                type:"confirm",
+                name: "confirmSub",
+                message:"Do you need to sub someone out?"
             }
 
            
         ]).then(function (answers) {
-            if(answers.currentSubs !== "no"){
-                var playerToBeSubbedIn = subs.indexOf(answers.currentSubs)
+            //IF SUB IS NEEDED THIS WORKS, OTHERWISE GO TO AROUND LINE 
+            if(answers.confirmSub === true){
+                //PROMPT TO SEE WHO TO BE SUBBED OUT AND IN 
                 inquirer.prompt([
+
                     {
                         type: "list",
-                        message: "who to use?",
-                        choices: currentStarters,
-                        name: "currentStarters",
-
-                        
+                        message: "Who to remove?",
+                        choices: starters,
+                        name: "startersList", 
+                    },
+                    {
+                        type: "list",
+                        message: "Who to be subbed in??",
+                        choices: subs,
+                        name: "subList"
+                    },
+                
+                ]).then(function (subSpecifics) {
+                    //since the value being passed by the answer is only the name, per inquirier documentation, we need to find the actual OBJECT
+                    //this grabs the index number of a matching name value of one of the objects
+                    for(i = 0; i < subs.length; i ++){
+                        if(subSpecifics.subList === subs[i].name){
+                            indexOfSub = i
+                        } 
                     }
-                ]).then(function (secondAnswers) {
-                    console.log("HEY THIS IS BEFORE THE SPLICE SUBS" + subs)
-                    console.log("HEY THIS IS BEFORE THE SPLICE STAT]ERS" + starters)
 
-                    console.log("PLAYER TO REMOVE INDEX: " + playerToBeSubbedIn)
-                    console.log("PLAYER TO REMOVE INDEX: " + subs[playerToBeSubbedIn])
-
-                    console.log("sub INDEX: " + playerToRemove)
-                    console.log("sub INDEX: " + starters[playerToRemove])
-
-                    var playerToRemove = starters.indexOf(secondAnswers.currentStarters)
-                    var  tempSubs = subs.splice(playerToBeSubbedIn, 0, starters[playerToRemove] )
-                    var tempStarters = starters.splice(playerToRemove, 0, subs[playerToBeSubbedIn])
-                    subs = tempSubs
+                    for(i = 0; i < starters.length; i ++){
+                        if(subSpecifics.startersList === starters[i].name){
+                            indexOfStarter = i
+                        } 
+                    }
+               
+                    //creates a temporary array to manipulate 
+                    var tempSub = subs
+                    var tempStarters = starters
+                    //grabs the sub and starter object to be spliced and pushed
+                    var trueSub = subs[indexOfSub]
+                    var trueStarter = starters[indexOfStarter]
+                    //splices the truesub and pushes the true starter to the temporary array
+                    tempSub.splice(indexOfSub, 1)
+                    tempSub.push(trueStarter)
+                    //splices the truestarter and pushes the truesub to the teomprary array
+                    tempStarters.splice(indexOfStarter, 1)
+                    tempStarters.push(trueSub)
+                    //sets the starter and subs to the manipulated array
+                    subs = tempSub
                     starters = tempStarters
                     
-                    console.log("HEY THIS IS after THE SPLICE SUBS" + subs)
-                    console.log("HEY THIS IS after THE SPLICE STAT]ERS" + starters)
-
-                    if(teamScore > 0){
-                        console.log("You won!")
-                        for(i=0; i < starters.length; i ++){
-                            starters[i].goodGame()
-                            starters[i].printStats()
-                           
-                        }
-                    }
-                    else if(teamScore < 0){
-                        console.log("You lost! ")
-                        for(i=0; i < starters.length; i ++){
-                            starters[i].badGame()
-                            starters[i].printStats()
-                        }
-                    }
-                    count++
-                    playgame()
+                    endGameCheck()
                 })
 
             }
-            
-            
-            
+            //IF NO SUB IS NEEDED PROCEED TO THE THIS STEP
+            else{
+                endGameCheck()
+            }
+  
         })
-        //BELOW IS POST COUNT IF STATEMENT
-}
+        
+    }
+    //IF COUNT = 5 PROCEED DTO THIS STEP 
+    else{
+        inquirer.prompt([
+            {
+                type:"confirm",
+                name: "playAgain",
+                message:"Play again?"
+            }
 
+        
+        ]).then(function (answers) {
+            if(answers.playAgain === true){
+                count = 0
+                teamScore = 0
+                playgame()
+            }
+        })
+
+    }
+        //THIS IS THE FUNCTION TO CHECK IF THE GAME WAS WON, PROBABLY COULD LIVE SOMEWHERE ELSE, BUT OH WELL.
+        function endGameCheck(){
+            if(teamScore > 0){
+            console.log("You won!")
+            for(i=0; i < starters.length; i ++){
+                starters[i].goodGame()
+                starters[i].printStats()
+            
+                }
+            }
+            else if(teamScore < 0){
+                console.log("You lost! ")
+                for(i=0; i < starters.length; i ++){
+                    starters[i].badGame()
+                    starters[i].printStats()
+                }
+            }
+            else{
+                starters[i].printStats()
+            }
+            count++
+            playgame()
+    }
 
 }
 
