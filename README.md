@@ -1778,3 +1778,7 @@ Solid design lends itself to building out easier
 - UX is like when a user enters a invalid command and how we respond (do we default to something or just let the user know that it didn't work)
 
 - UI is how it looks
+
+## design
+
+breaking out responsiblites (think tv.js vs actor.js for the cli.js app) and is effective because we can go back and change just one part without affecting others

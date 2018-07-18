@@ -1,9 +1,0 @@
-
-Show: House of Cards
-Genres: undefined
-Rating: 8.6
-Summary: <p>Based on the BBC miniseries of the same name, <b>House of Cards </b>follows Francis Underwood, the politician's politician – masterful, beguiling, charismatic and ruthless. He and his equally ambitious wife Claire will stop at nothing to ensure their ascendancy. This wicked political drama slithers beneath the curtain and through the back halls of greed, sex, love and corruption in modern Washington D.C.</p>###############################################################################
-Show: The Crown
-Genres: undefined
-Rating: 8.1
-Summary: <p><b>The Crown</b> tells the inside story of two of the most famous addresses in the world -- Buckingham Palace and 10 Downing Street - and the intrigues, love lives and machinations behind the great events that shaped the second half of the 20th century. Two houses, two courts, one Crown.</p>###############################################################################

@@ -2,9 +2,11 @@
 // Add code to print whether the user is searching for an actor or tv show, along with the name of the actor or tv show they are searching for
 
 var TV = require("./tv.js")
+var actor = require("./actor.js")
 
 //THIS IS WHAT I WAS MISSING IN CLASS,  CREATING THIS OBJECT FROM CONSTRUCTOR
-var tv = new TV();
+
+
 
 var command = process.argv[2]
 
@@ -17,13 +19,16 @@ for(i=3; i < process.argv.length; i ++){
 
 switch(command) {
     case("show"):
+        var tv = new TV()
         var show = keywordsArr.join("+")
         tv.findShow(show)
         break;
 
     case("actor"):
-        logItOut(command, nabilsWay)
-        break;
+       var actorQuery = new actor();
+       var actorSearch = keywordsArr.join("+")
+       actorQuery.findActor(actorSearch)
+       break;
     default:
         console.log("I'm sorry, I didn't understand that. Please try again.")
 }

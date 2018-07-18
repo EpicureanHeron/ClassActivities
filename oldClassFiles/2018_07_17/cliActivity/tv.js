@@ -3,7 +3,7 @@ var request = require("request")
 var fs = require("fs")
 //this is a constructor which we are passing out
 var TV = function () {
-    console.log("success")
+    console.log("success tv")
     this.findShow = function (show) {
         // The following URL can be used to search the TV Maze API for a given show
         var URL = "http://api.tvmaze.com/singlesearch/shows?q=" + show;
@@ -22,7 +22,7 @@ var TV = function () {
                     "Summary: " + parsedBody.summary
                 ].join("\n")
 
-                fs.appendFile('log.txt', showData + divider, (err) => {
+                fs.appendFile('log.txt', showData +"\n"+ divider, (err) => {
                     if (err) throw err;
                     console.log('The "data to append" was appended to file!');
                   });
