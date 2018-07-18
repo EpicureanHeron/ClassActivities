@@ -1,4 +1,4 @@
-# myCodingBootcampNotes
+c# myCodingBootcampNotes
 CBC notes 
 
 ### This is my Readme file
@@ -1758,3 +1758,23 @@ recusion is something calling itself, this is a rescursion LOOP
 
 ## Recursion Arrays 
 
+
+# 7/17/2018 
+
+## Architecture, design, and good code  
+
+Great career sites for common interview questions:
+
+- https://www.geeksforgeeks.org/top-10-algorithms-in-interview-questions/
+- https://www.hackerrank.com/
+- https://leetcode.com/
+
+
+Solid design lends itself to building out easier 
+
+
+## UX vs UI
+
+- UX is like when a user enters a invalid command and how we respond (do we default to something or just let the user know that it didn't work)
+
+- UI is how it looks
