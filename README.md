@@ -1782,3 +1782,78 @@ Solid design lends itself to building out easier
 ## design
 
 breaking out responsiblites (think tv.js vs actor.js for the cli.js app) and is effective because we can go back and change just one part without affecting others
+
+
+# 7/19/2018
+
+## MySQL
+
+Structured Query Language 
+
+https://www.w3schools.com/sql/sql_intro.asp
+
+Standard SQL Port 3306
+
+localhost: 127.0.0.1
+
+
+Nabil on Docker and Kubernetes also stylized K8S (HE SAYS THIS IS NOT GOING ANYWHERE)
+- organization system to run things locally, good way to test databases 
+- containers can SCALE so if you need 12 at peak hours and 3 at midnight, this is big
+- it is basically virtualizing everything and also sharing a lot resources, it creates containers 
+- kunernetes orchestrates everything on the SERVER side it can:
+    - keep two containers (docker) up at a time (even if one goes down)
+    - monitor CPU or other resouces 
+    - can handle "SECRETS" eg api keys
+    - can use K8s for deploying new version and tearing down old https://en.wikipedia.org/wiki/CI/CD
+
+## SQL and schemas
+SQL requires a SCHEMA, which it means it needs sort of a template before you start adding data to and what SORT of data (characters, intergers, floats, etc)
+
+```
+CREATE TABLE some_table (
+    --VARCHAR is 100 characters long 
+    table_1 VARCHAR(100) NOT NULL,
+    --integer allows a 10 digit integer
+    table_2 INTEGER(10),
+    table_3 BOOLEAN
+);
+```
+
+```
+    
+ CREATE TABLE favorite_movies(
+     --this is a way to have the database assign the ID based on the last ID
+    id INTEGER NOT NULL AUTO_INCREMENT,
+	film VARCHAR(100) NOT NULL,
+    --the default always creates it as false unless the specified as other when entered
+    five_times BOOLEAN DEFAULT false,
+    score INTEGER(100),
+    --sets the PRIMARY KEY which is to say, the best way to get data
+    PRIMARY KEY (id)
+    );
+    
+```
+
+Updating data, usually the WHERE should grab a primary key 
+```
+UPDATE some_table
+SET some_col = 6
+WHERE some_col = some_value
+
+```
+## JOIN TABLES
+- inner join: combines the tables and data has to exist on both the tables 
+- left join: only grabs data from one of the two tables, even if the other has null values
+- right join: same as above...but flipped. 
+
+JOINING TABLES with LEFT JOIN 
+THIS SHOULD SHOW ALL THE DATA ON THE some_table even if it doesn't exist on some_table_2 (I think)
+
+https://stackoverflow.com/questions/5706437/whats-the-difference-between-inner-join-left-join-right-join-and-full-join
+```
+SELECT col1, col2, col3_some_table2
+FROM some_table
+LEFT JOIN some_table2 ON some_table.id = some_table_2.id
+
+```
