@@ -1857,3 +1857,64 @@ FROM some_table
 LEFT JOIN some_table2 ON some_table.id = some_table_2.id
 
 ```
+
+
+# 7/21/2018
+## Docker pre class
+using https://docs.docker.com/toolbox/toolbox_install_windows/ on non preminum windows 10
+
+use https://hub.docker.com/ and pop open the docker terminal 
+
+### new guy name is David works at Target, from OSU
+
+## MySql and Node
+
+can use node to require mysql
+
+```
+var mysql = require("mysql");
+
+var connection = mysql.createConnection({
+  //host: "localhost",
+
+  host: "192.168.99.100",
+
+  // Your port; if not 3306
+  port: 3306,
+
+  // Your username
+  user: "root",
+
+  // Your password
+  password: "",
+  // password:"root",
+  database: "ice_creamDB"
+});
+
+connection.connect(function(err) {
+  if (err) throw err;
+  console.log("connected as id " + connection.threadId);
+  connection.end();
+});
+
+```
+
+Using callbacks are useful for async stuff, so it is waiting for the response then the callback is executed once it is ready to go
+
+mysql is really nice for building queries, each "?" you enter into the base query you can pass an array which maps it in order 
+
+so genre=? becomes genre=DANCE and title=? becomes title=The
+
+```
+var query = connection.query("SELECT * FROM songs WHERE genre=? AND where title =?", ["Dance", "The'], function(err, res) {
+
+```
+## async connects and REAPING
+
+you don't necessarily want to end.connection() in a specific function in mysql node because you do not know the run time on those async functions...one may end earlier than the other even though they are called in a specific order (promise and responses) so...don't end connection. Nabil recommended leverating the "REAP" on the SQL side, which monitors if your connect is idle or not and ending the connection on their end
+
+## Create Read Update Delete via node.js (CRUD)
+
+Good CRUD examples: CBC\ClassActivities\2018_07_21\09-iceCreamCRUD AND CBC\ClassActivities\2018_07_21\08-playlistRead\Solved
+
+
