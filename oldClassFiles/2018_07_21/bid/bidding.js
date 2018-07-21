@@ -21,12 +21,12 @@ var connection = mysql.createConnection({
 
 getItems()
 
-var options = ["POST AN ITEM", "BID ON AN ITEM"]
+var options = ["POST AN ITEM", "BID ON AN ITEM", "SHOW DATABASE INFO"]
 
 inquirer.prompt([
     {
         name: "command",
-        message: "Guess a letter: ",
+        message: "Chose a command: ",
         type: "list",
         choices: options
 
@@ -39,7 +39,10 @@ inquirer.prompt([
             post()
             break;
         case "BID ON AN ITEM":
-            showItems()
+            bid()
+            break;
+        case "SHOW DATABASE INFO":
+            read()
             break;
     }
 });
@@ -68,8 +71,8 @@ function post() {
         if (answers) {
             var posts = { item: answers.item, high_bid: answers.value }
             var query = connection.query('INSERT INTO transactions SET ?', posts, function (err, res) {
-                 if (err) throw err;
-             })
+                if (err) throw err;
+            })
             // connection.end();
         }
 
@@ -86,13 +89,13 @@ function getItems() {
         for (var i = 0; i < res.length; i++) {
             itemList.push(res[i].item)
         }
-        
+
 
     })
 
 }
 
-function showItems() {
+function bid() {
     inquirer.prompt([
         {
             name: "item",
@@ -107,13 +110,50 @@ function showItems() {
         }
 
     ]).then(function (answers) {
-        if(answers){
-            //compare values
-            
+
+        if (answers) {
+
+            //inits ID
+            var id;
+
+            //grabs the ID for the value that was selected 
+            for (i = 0; i < itemList.length; i++) {
+                if (itemList[i] === answers.item) {
+                    //autoincrement starts at 1, whereas this is passing the index ID
+                    id = i + 1
+
+                }
+
+            }
+            //grabs the highest bid from the ID of the selected
+            var query = connection.query("SELECT high_bid FROM transactions where id=?", [id], function (err, res) {
+                if (err) throw err;
+                //if the bid of the user is higher 
+                if (answers.value > res[0].high_bid) {
+                    console.log("You are the highest bidder!")
+                    //updates the row 
+                    var query = connection.query("UPDATE transactions SET high_bid=? WHERE id=?", [answers.value, id], function (err, res) {
+                        if (err) throw err;
+                    })
+                }
+                else {
+                    console.log("You still are outbid")
+                }
+
+            })
+
         }
 
- 
+
     })
     // connection.end();
 
+}
+
+function read() {
+    var query = connection.query("SELECT * FROM transactions", function (err, res) {
+        res.forEach(element => {
+            console.log(element)
+        });
+    })
 }
