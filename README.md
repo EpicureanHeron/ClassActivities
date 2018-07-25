@@ -1918,3 +1918,10 @@ you don't necessarily want to end.connection() in a specific function in mysql n
 Good CRUD examples: CBC\ClassActivities\2018_07_21\09-iceCreamCRUD AND CBC\ClassActivities\2018_07_21\08-playlistRead\Solved
 
 
+# 7/24/2018 More MySQL
+
+SCHEMA FILE and SEED FILES 
+
+You can import CSV via https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-table.html
+
+instead of FLOAT use DECIMAL, FLOAT does not guaratee accuracy
