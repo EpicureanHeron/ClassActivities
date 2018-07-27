@@ -207,7 +207,16 @@ function albumAndSong(){
         },
 
     ]).then(function (answers) {
-        //
+        //the query they used in the solved version
+
+        //INNER JOIN and ORDER By
+
+        // var query = "SELECT top_albums.year, top_albums.album, top_albums.position, top5000.song, top5000.artist ";
+        // query += "FROM top_albums INNER JOIN top5000 ON (top_albums.artist = top5000.artist AND top_albums.year ";
+        // query += "= top5000.year) WHERE (top_albums.artist = ? AND top5000.artist = ?) ORDER BY top_albums.year ";
+
+
+
         var select = "SELECT a.release_year, a.artist, a.album, s.title as song_title "
         var from = "FROM ranked_songs s "
         var join = "LEFT JOIN ranked_albums a ON a.artist = s.artist and s.release_year = a.release_year "

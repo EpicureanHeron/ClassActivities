@@ -1925,3 +1925,138 @@ SCHEMA FILE and SEED FILES
 You can import CSV via https://dev.mysql.com/doc/workbench/en/wb-admin-export-import-table.html
 
 instead of FLOAT use DECIMAL, FLOAT does not guaratee accuracy
+
+# 7/26/2018 Introduction to Node Servers
+
+Going over last SQL activity fron 7/22/2018
+
+## Foreign Keys in SQL
+
+```
+DROP DATABASE IF EXISTS top_songsDB;
+CREATE database top_songsDB;
+
+USE top_songsDB;
+
+CREATE TABLE top_albums (
+  id INT NOT NULL auto_increment,
+  position INT NOT NULL,
+  artist VARCHAR(100) NULL,
+  album VARCHAR(100) NULL,
+  year INT NULL,
+  raw_total DECIMAL(10,4) NULL,
+  raw_usa DECIMAL(10,4) NULL,
+  raw_uk DECIMAL(10,4) NULL,
+  raw_eur DECIMAL(10,4) NULL,
+  raw_row DECIMAL(10,4) NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE top_songs (
+  id INT NOT NULL auto_increment,
+  album_id INT NOT NULL,
+  position INT NOT NULL,
+  artist VARCHAR(100) NULL,
+  song VARCHAR(100) NULL,
+  year_released INT NULL,
+  raw_total DECIMAL(10,4) NULL,
+  raw_usa DECIMAL(10,4) NULL,
+  raw_uk DECIMAL(10,4) NULL,
+  raw_eur DECIMAL(10,4) NULL,
+  raw_row DECIMAL(10,4) NULL,
+  PRIMARY KEY (id),
+      FOREIGN KEY (album_id) REFERENCES top_albums(id)
+);
+
+INSERT into top_albums (position, album) values (1, 'Purple Rain');
+
+INSERT into top_songs (album_id, position, artist, song) values (1, 5, 'Prince' ,'Lets go crazy');
+
+SELECT * FROM top_songs;
+select * from top_albums;
+
+
+
+SELECT *
+FROM top_albums 
+INNER JOIN top_songs 
+ON (top_albums.id = top_songs.album_id ) 
+WHERE (top_songs.artist = 'Prince') 
+ORDER BY top_albums.year;
+```
+
+Create some_db first
+
+Then Creating some2_db that has a FOREIGN KEY then can specify that a certain KEY is required which key word REFERENCES the some_db(id)
+
+It presupposes you KNOW something about that first database to pass a foreign key in the second database, but there are "ways" to get around this...not specific
+
+## Powerpoint Server Side
+
+Node and Express Servers are one of the MOST IMPORTANT THINGS we learn
+
+### Resources
+
+get a pluralsight trial account https://www.pluralsight.com/ and check out "Building Blocks of Express.js"
+
+also USE Lynda as well on express.js 
+
+
+Clients and Servers use HTTP/HTTPS to communicate 
+
+
+Use to be more dedicated to HARDWARE, but lots of "cloud services" like Amazon Web Services, Google Cloud Platform, Heroku, and Digital Ocean
+
+For now, our machines will be clients and servers 
+
+Things our servers will do:
+
+* Listen
+* URL Parsing
+* Route Handling
+* Send HTML 
+* Send JSON
+* recieve POSTS
+* Server Side Logic
+
+```
+//requiring http module
+var http = require("http")
+
+//creates a server, there is a "request stream" and "result stream"
+var server = http.createServer(function(request, result){
+    //passing call back function and executed on every request to the server
+    console.log("server received a request")
+    //writing to our "results stream"
+    result.end("Hello world!")
+});
+//makes server listen
+server.listen(7000, function(){
+    console.log("I'm listening")
+});
+```
+
+run the above code in a node directory and then navigate to 
+http://localhost:7000/ 
+
+in a browser and it should say "hello world!" 
+
+can use switch statements to parse URLs and send content out 
+
+Can READ a file with node's FS library
+
+```
+function handleRequest(req, res){
+    fs.readFile(_dirname + "/index.html", function(err, data){
+        res.writeHead(200, {"Content-Type" : "text/html"})
+        res.end(data)
+    })
+}
+```
+
+_DIRNAME, global variable which looks at the CURRENT DIRECTORY
+
+## URL vs URI
+
+https://stackoverflow.com/questions/176264/what-is-the-difference-between-a-uri-a-url-and-a-urn
+
