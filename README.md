@@ -2060,3 +2060,131 @@ _DIRNAME, global variable which looks at the CURRENT DIRECTORY
 
 https://stackoverflow.com/questions/176264/what-is-the-difference-between-a-uri-a-url-and-a-urn
 
+
+# 7/28/2018 Express Servers
+
+## using postman 
+
+Postman apparently emulates the "posting, requesting, etc"
+
+Post console
+```
+You did a POST with the data:
+{"productionName":"A Plastic Straw"}
+```
+
+Put console
+```
+You did a PUT with the data:
+{"productionName":"A Plastic Straw"}
+
+```
+Delete console
+```
+You did a DELETE with the data:
+{"productionName":"A Plastic Straw"}
+```
+
+Leveraging different METHODS on the same URL can have different things done on the same URL (be it posting data, deleting data, getting data, putting data.). You can parse out the method and have a switch statement to DO whatever you need to have done. Think about out that default bootstrap form you saw on the campnow project which used a PHP action redirection and posting stuff. It probably leveraged this. 
+
+How does a box  represent a server? Stuff needs to be put IN it for it to be something
+
+Common "boxes" to put inside are "POST, LISTEN, Sending HTML, route handling"
+
+## Express Notes
+
+https://expressjs.com/ 
+
+Web framework unopinionated, minimalist, web framework for node.js 
+
+```
+npm install express --save
+
+```
+What is a route? 
+things like / or /home or /api/headlines 
+
+These are the URIs I think (different from URLs)
+
+Different ROUTES can have different STUFF given to them (/API can return JSON whereas / can return HTML)
+
+Difference between GET and POST: 
+
+GET is expecting something back from the server
+
+POST is expecting something from the client and MIGHT have something back from the server
+
+```
+var express = require("express");
+
+var app = express();
+var PORT = 3000;
+
+var yoda = {
+  name: "Yoda",
+  role: "Jedi Master",
+  age: 900,
+  forcePoints: 2000
+};
+
+app.get("/", function(req, res) {
+  res.send("Welcome to the Star Wars Page!");
+});
+
+
+app.get("/yoda", function(req, res) {
+  res.json(yoda);
+});
+
+```
+
+require a route in express
+```
+
+app.get("/:character", function(req, res) {}
+
+```
+the notation of "/:SomeRoute" requires it. The ":" is the magic part of it
+
+to make a route optional
+
+```
+app.get("/character?", function(req, res) {}
+```
+
+another good example of optional and required
+
+```
+app.get("/:character/:age?/:role?", function(req, res) {}
+
+```
+Show what is running on a given port
+```
+lsof - i :3000
+
+```
+
+then can KILL the process by taking the PID
+
+```
+kill [somePID]
+
+```
+
+
+## post requests
+
+```
+app.post("/some/path"), function(req,res){
+
+
+}
+
+```
+
+If POSTING probably need to put that data somewhere, or else it will not "persist" 
+
+## path npm
+
+Helps give ABSOLUTE route to the file/folder etc
+

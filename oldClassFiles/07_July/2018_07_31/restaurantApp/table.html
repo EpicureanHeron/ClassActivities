@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script> 
+        var  queryURL = "http://localhost:3000/api/reservations"
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function(response) {
+              console.log(response)
+             response.forEach(element => {
+              var newDiv = $("<div>")
+              newDiv.addClass("table")
+              newDiv.html(element.Name)
+              $("#table").append(newDiv)
+            });
+      
+          })
+        
+        
+        
+        </script>
+    <title>Current Reservations</title>
+  </head>
+  <style>
+    .fas {color: #dc3545;}
+    .card {width: 75%; margin-top: 2%; margin-left: 5%;}
+    .table {padding-left: 4px; border-style: solid; border-radius: 4px; border-color: rgba(0,0,0,.125); border-width: 1px; background-color: rgba(0,0,0,.03);}
+    #table {padding-left: 4px; border-style: solid; border-radius: 4px; border-color: rgba(0,0,0,.125); border-width: 1px; background-color: rgba(0,0,0,.03);}
+    .wait {padding-left: 4px; border-style: solid; border-radius: 4px; border-color: rgba(0,0,0,.125); border-width: 1px; background-color: rgba(0,0,0,.03);}
+    #wait {padding-left: 4px; border-style: solid; border-radius: 4px; border-color: rgba(0,0,0,.125); border-width: 1px; background-color: rgba(0,0,0,.03);}
+  </style>
+ 
+  <body>
+
+    <div class="jumbotron">
+        <h1 class="display-4"><i class="fas fa-fire"></i>Hot Restaurant</h1>
+        <hr class="my-4">
+        <h2 class="lead"><strong>View our Current Reservations and Wait List.</strong></h2>
+        <a class="btn btn-danger btn-lg" href="#" role="button">Home</a>
+        <a class="btn btn-danger btn-lg" href="#" role="button">Make Reservation</a>
+      </div>
+
+      <div class="card">
+            <div class="card-header">
+              <h4>Current Reservations</h4>
+            </div>
+            <div class="card-body">
+                    <div class="table" id="table">
+                        <h5 class="card-title">Table 1</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+            </div>
+          </div>
+<br>
+          <div class="card">
+                <div class="card-header">
+                  <h4>Wait List</h4>
+                </div>
+                <div class="card-body">
+                        <div class="wait" id="wait">
+                            <h5 class="card-title">Table 1</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                </div>
+              </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
