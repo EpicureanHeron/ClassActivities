@@ -2188,3 +2188,94 @@ If POSTING probably need to put that data somewhere, or else it will not "persis
 
 Helps give ABSOLUTE route to the file/folder etc
 
+# 8/2/2018 Handlebars
+
+## Reviewing Posts with jquery and Routing from 7/31 class
+###
+in package.json there is a "main" definition,  which if you run 
+```
+npm start
+```
+it runs whatever is at the main in the package.json
+
+SO probably going forward use npm start instead of node server.js or node w/e to start an app
+
+### body parser 
+bodyParser parses the body (usually json) of gets and posts. It makes it easier to deal with.
+
+### routing
+making a route REQUIRED such as 
+```
+var htmlRoutes = require("./app/routing/htmlRoutes.js")(app)
+
+```
+Where you have to establish the APP in your express code before you start passing it to routes
+
+### jquery posts
+
+find current URL by the window
+```
+var currentURL = window.location.origin
+```
+
+## Getting Parameters from a URL
+Use colons ... also remember you can use astriks 
+```
+app.get("/:operator/:value1/:value2", function (req, res) {
+
+  var operation = req.params.operator
+  var value1 = req.params.value1
+  var value2 = req.params.value2
+```
+
+## Working with MySql and Express to display html
+
+See seinfeld DB in the 2018_08_02 folder
+
+This is cumbersome and becomes very hard to read because 
+
+People have built semantic javascript framework to solve this issue, it give syou a template to inject variables into which gives back a html file 
+
+## Handlebars
+
+[handlebar website](https://handlebarsjs.com/)
+
+
+```
+npm i handlebars
+```
+
+```
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.set("view engine", "handlebars")
+```
+
+Handlebars is a "conventional" framework, it just expects that all your templates are ain a certain directory called "views" and that directory is populated with files which end with .handlebars. These handlebar files have variables that are expressed in this way
+
+```
+{{someVar}}
+```
+which you can then pass variables and use this weird "each" notation like a for lopp
+
+```
+<ul>
+{{#each somevariable }}
+    <li>{{}}</li>
+    {{/each}}
+</ul>
+```
+Seems like the {{somevar}} can be a JSON key value such that 
+```
+{key: value,
+name: 1,
+bankAccount: 666}
+
+```
+would map to a .handlebars file if it was passed and the file was formatted such that
+```
+<h1>{{key}}</h1>
+<p>{{bankAccount}}</p>
+<h2>{{name}}</h2>
+
+```
+
