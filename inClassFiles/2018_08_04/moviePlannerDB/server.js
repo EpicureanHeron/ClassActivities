@@ -72,7 +72,8 @@ app.get("/todos", function(req, res) {
 
 // Update a todo
 app.put("/todos/:id", function(req, res) {
-  connection.query("UPDATE movies SET movie = ? WHERE id = ?", [req.body.movie, req.params.id], function(err, result) {
+  console.log(req.body.movie)
+  connection.query("UPDATE movies SET movie=? WHERE id=?", [req.body.movie, req.params.id], function(err, result) {
     if (err) {
       // If an error occurred, send a generic server failure
       return res.status(500).end();
