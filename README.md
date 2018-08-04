@@ -2279,3 +2279,49 @@ would map to a .handlebars file if it was passed and the file was formatted such
 
 ```
 
+# 8/4/2018 More Handlebars
+
+Could parse all the data on the template side of Handlebars using {{if}} and {{each}} and some custom blocks. But most likely not best practice
+
+With HTTP request you define a header method (not sure if that is the proper term). These are the GETs and POSTs among others. Think CRUD.
+
+HTTP Get, Post, Put, and Deletes 
+
+## REST API 
+
+Representational State Transfer  = REST 
+
+
+https://spring.io/understanding/REST
+
+https://www.restapitutorial.com/lessons/whatisrest.html
+
+### Put: store an entity at a URI. It creates a new entity or update an existing one. IT is "UPDATE"
+
+### Delete: remove data at a URI
+
+```
+<form action="/" method="POST">
+	<textarea type="text" name="task"></textarea>
+
+	<button type="submit">Submit</button>
+</form>
+```
+
+Also in Chrome Dev Tools, use the  network tab to see the POST and GET in details.
+
+## Putting and Deleting via HTML
+
+Using jquery to pass something like the following
+
+```
+$.ajax("todos/" + id, {
+    type: "DELETE"
+}).then(
+    function(){
+        console.log("deleted id" , id )'
+        location.reload()
+    }
+)
+```
+Unlike GET and POST, ajax needs to have the method/type of put or delete has to be specified 

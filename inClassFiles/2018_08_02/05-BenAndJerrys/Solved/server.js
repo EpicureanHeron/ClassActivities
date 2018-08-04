@@ -20,27 +20,24 @@ var icecreams = [
   { name: "banana", price: 1, awesomeness: 1 },
   { name: "greentea", price: 5, awesomeness: 7 },
   { name: "jawbreakers", price: 6, awesomeness: 2 },
+  { name: "vanilla", price: 10, awesomeness: 3 }
 ];
 
 // Routes
-app.get("/icecream/:name", function (req, res) {
-  var indexToUse;
- 
-  for (i = 0; i < icecreams.length; i++) {
+app.get("/icecreams/:name", function(req, res) {
+  for (var i = 0; i < icecreams.length; i++) {
     if (icecreams[i].name === req.params.name) {
-    indexToUse = i
+      return res.render("icecream", icecreams[i]);
     }
-   
   }
-  
-
-  res.render("icecream", icecreams[indexToUse]);
 });
 
+app.get("/icecreams", function(req, res) {
+  res.render("ics", { ics: icecreams });
+});
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function () {
+app.listen(PORT, function() {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });
-
