@@ -18,7 +18,7 @@ Be sure to utilize the [MYSQL Heroku Deployment Guide](../../Supplemental/MySQLH
 
 * Your app will store every burger in a database, whether devoured or not.
 
-* [Check out this video of the app for a run-through of how it works](burger_demo.mp4).
+* Request a video of the app for a run-through of how it works from a TA.
 
 ### Submission on BCS
 

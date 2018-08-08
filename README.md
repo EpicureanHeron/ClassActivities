@@ -2325,3 +2325,81 @@ $.ajax("todos/" + id, {
 )
 ```
 Unlike GET and POST, ajax needs to have the method/type of put or delete has to be specified 
+
+
+# 8/7/2018 ORM
+
+This does something...if anticipating needing to use javascript files which are held on the server but will be executed on the browser, use this code for code that is held in the public folder. Usually has a structore of public/assets 
+```
+app.use(express.static("public"));
+```
+
+## ORM 
+Object Relational Mapping
+
+In Class Example
+* create var orm
+* orm is a json object
+* where it has several methods 
+* Using ?? in the SQL query references the Table or Column
+* using ORM, that is abstracting the queries and keeping the SQL out of the server, can help prevent SQL injection
+
+If what you are importing is asynchronous via require, if you assign that "return" to a variable in this sort of way:
+
+```
+var data = orm.selectAll("table", "column" )
+```
+This will return an undefined.
+
+See the "asynchProblem" from today's class activites
+
+But can include a call back function
+```
+orm.selectAll("someTable", "someColumbn", function(result){
+    var data = result;
+    console.log(data)
+})
+```
+where the orm has a parameter which refers to the callback function
+```
+var orm = {
+    selectAll.(table, column, cb){
+        connection.query("select ?? from ?? where", [column, table], function(err, res){
+            cb(res)
+        })
+        
+    }
+}
+```
+
+Anonymous function: a function without a name, sort of a call back function 
+This is an anonymous function
+```
+var doSomething = function() {
+    console.log("something")
+}
+```
+Whereas a "named" function would be something like
+
+```
+
+function myFunction(p1, p2) {
+    return p1 * p2;              // The function returns the product of p1 and p2
+}
+
+```
+
+## Model View Controller (MVC)
+
+* Model - database
+* View - client's perspective (html, css, javascript)
+* Controller - business logic that drives the app (middleware, node.js, etc )
+
+
+## Handlebars Partial
+Using the syntax 
+```
+ {{> cats/cat-block sleep=false}}
+
+```
+Is using a "partial" which expects something 

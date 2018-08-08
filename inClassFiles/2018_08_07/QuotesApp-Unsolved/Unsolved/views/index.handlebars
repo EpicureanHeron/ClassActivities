@@ -1,0 +1,65 @@
+<h1>Quotes App</h1>
+
+<p>Manage quotes with this app</p>
+
+<!-- Pass in data from server.js -->
+<ul>
+  {{#each quotes}}
+  	<li>
+  		<p><span class="label">ID:</span> {{this.id}}</p>
+      <p><span class="label">Quote:</span> {{this.quote}}</p>
+      <p><span class="label">Author:</span> {{this.author}}</p>
+
+      <button data-id="{{this.id}}" class="delquote">Delete</button>
+
+      <a href="/{{this.id}}">Update this quote</a>
+  	</li>
+  {{/each}}
+</ul>
+
+<h2>Add a Quote</h2>
+
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="auth">Author:</label>
+    <input type="text" id="auth" name="author">
+  </div>
+
+  <div class="form-group">
+    <label for="quo">Quote:</label>
+    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
+  </div>
+
+  <button type="submit" id="#createQuote">Add Quote</button>
+</form>
+
+<script>
+$("#createQuote").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var newQuote = {
+      author: $("#createmovie [name=author]").val().trim()
+      quote: $("#createmovie [name=quote]").val().trim()
+
+    };
+
+    // Send the POST request.
+    $.ajax("/todos", {
+      type: "POST",
+      data: newMovie
+    }).then(
+      function() {
+        console.log("created new plan");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
+
+
+
+
+</script>
