@@ -2402,4 +2402,42 @@ Using the syntax
  {{> cats/cat-block sleep=false}}
 
 ```
-Is using a "partial" which expects something 
+Is using a "partial" which expects some .handlebars file to be in partials director
+
+in this case because it says cats/cat-block is referring to a directory within that partials folder. 
+
+# 08/09/2018 Sequel to MySQL
+
+## Recap ORM and MVC 
+
+### MVC
+MVC is a paradigm, organizes code so that you can seperate out business logic into 
+
+* Model - represens the application core  (database and its connection)
+* View - anything that is displayed to the user to interact with the application (HTML, CSS, public files)
+* Controller - handles input into database (accepting input from the view, sending it to the model, taking a response from the model, and sending it back to view)
+
+
+This is an abstract model, in reality some parts of a server are both Model and Controller. Same with the server doing both the Model and Controller aspect if you have an ORM object and connection object associated with the server 
+
+New SQL for capturing date time
+
+```
+DATETIME
+```
+
+### ORM
+
+Object Relational Mapping
+
+Method of abstracting code so that MVC can 
+
+## New framework Sequelize 
+
+http://docs.sequelizejs.com/manual/installation/getting-started.html
+
+Can construct tables and populate them via javascript 
+
+
+Sequelize models are actually tables 
+Can do A LOT with sequelize
