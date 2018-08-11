@@ -2441,3 +2441,30 @@ Can construct tables and populate them via javascript
 
 Sequelize models are actually tables 
 Can do A LOT with sequelize
+
+# 08/11/2018
+
+## Getting in the CRUD with Sequelize
+
+Sequelize is an ORM model 
+
+## common sequelize crud methods
+
+* findOne: finds a single record from a table
+* findALl: finds all records from a table
+* create: creates a new record in a table
+* update: updates a record or records in a table
+* destroy: deletes a record or records from a table 
+
+
+issue with sequelize on windows machine: https://github.com/sequelize/cli/pull/479
+
+basically creates \ in the index.js config updated with the following in the index.js that is created 
+
+```
+var config    = require(__dirname + '/../config/config.json')[env];
+```
+
+Check the 07-ORM-To-Sequelize-Unsolved for lots 
+
+validation notes: http://docs.sequelizejs.com/manual/tutorial/models-definition.html#validations
