@@ -2451,7 +2451,7 @@ Sequelize is an ORM model
 ## common sequelize crud methods
 
 * findOne: finds a single record from a table
-* findALl: finds all records from a table
+* findAll: finds all records from a table
 * create: creates a new record in a table
 * update: updates a record or records in a table
 * destroy: deletes a record or records from a table 
@@ -2468,3 +2468,15 @@ var config    = require(__dirname + '/../config/config.json')[env];
 Check the 07-ORM-To-Sequelize-Unsolved for lots 
 
 validation notes: http://docs.sequelizejs.com/manual/tutorial/models-definition.html#validations
+
+
+# 8/14/2018
+
+More Sequelize pratice 
+
+## Sequelize Associations (foreign keys)
+http://docs.sequelizejs.com/manual/tutorial/associations.html
+
+## Eager Loading (Join)
+
+http://docs.sequelizejs.com/manual/tutorial/models-usage.html
