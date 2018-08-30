@@ -2480,3 +2480,99 @@ http://docs.sequelizejs.com/manual/tutorial/associations.html
 ## Eager Loading (Join)
 
 http://docs.sequelizejs.com/manual/tutorial/models-usage.html
+
+# 8/16/2018 Project 2
+
+Travis and LINTING
+
+# 8/18/2018 Project 2, project management
+
+## Agile and Waterfall
+
+* Waterfall use to be used frequently in the 90s
+* transitioned more to Agile in the early 00s 
+
+## Kanban
+
+* Git Hub PROJECTS tab has a KANBAN Board
+
+# Stand Ups
+
+* Meeting in the evening via slack
+
+## Sprints
+
+Every 2 weeks
+
+## Playback
+
+End of every sprint, show off all the delieverable features from the last sprint
+
+# 08/21/2018
+
+## Testing 
+
+Currently have a directory called 'test' in the Group2 Project
+
+Can automate tests
+
+### Mocha
+
+Test runner
+* executes "describe/it" syntax
+
+```
+describe("someFunction", function() {
+    it("should multiple proprerly when passed numbers", function(){
+        //this part is chai
+        expect(multipl(2,4)).to.equal(8);
+    })
+    it("should throw when not passed numbers", function(){
+        expect(function(){
+            multiply(2,"4");
+///SOME MORE STUFF HERE I MISSED
+        })
+    })
+})
+```
+* formats results
+
+### Chai
+
+Assertion library
+* asserts that what "should" have happened, did in fact happen
+
+## Error handling
+
+* Bugs
+
+* Errors/Exceptions
+
+Useful code
+```
+try {
+
+} catch (error){
+
+}
+
+
+```
+
+
+# 08/23/2018
+
+## End Point Testing
+
+Unit testing is the most "atomic" version of tests. As in it is the lowest and most minute level of tests 
+
+### ChaiHttp
+
+Plugin which can be required via 
+
+```
+var chaiHttp = require("chai-http"); 
+
+```
+
+enables APIs to be tested it sees like

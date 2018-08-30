@@ -1,0 +1,15 @@
+{
+  "name": "unsolved",
+  "version": "1.0.0",
+  "description": "In this activity we will write tests for a function designed to remove all vowels from a given string.",
+  "main": "disemvowel.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
