@@ -2576,3 +2576,40 @@ var chaiHttp = require("chai-http");
 ```
 
 enables APIs to be tested it sees like
+
+# 08/30/2018
+
+## Project 2 Recap
+
+Critiques 
+* Bird in hand is worth 2 in the bush
+    * Know where you are 
+    * MVPs 
+    * Thinnest vertical slice
+* Curve Ball
+    * Controlling the board means controlling the game
+    * Deploying on Heroku elminates a big variable
+* Make your GitHub projects better
+    * Back end projects are hard to "see"
+        * make a gif for github readme showing what is going on 
+    * Have a Dummy account for people to play around with and mention it in ReadMe
+
+## read ahead, how to link MongoDb and Node
+
+## MongoDB
+
+* Not relational 
+* document oriented, add data directly via JSON to "collections"
+* stores data in BSON (Binary JSON)
+* lots of drivers and packages
+* More "object oriented"
+* Excels at heterogenous data formats and are easy to implement
+
+### Collections
+
+Made up of individual documents 
+
+Database = database
+table = collection
+row = document
+column = field 
