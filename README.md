@@ -2613,3 +2613,38 @@ Database = database
 table = collection
 row = document
 column = field 
+
+
+# 9/6/2018
+## Web Scrapping and Server-Side Mongo
+
+### Web Scrapping with Cherrio
+
+https://github.com/cheeriojs/cheerio
+
+https://cheerio.js.org/
+
+## Mongo Recap
+
+Display all databases
+
+```
+show dbs
+```
+
+create/use a database
+
+```
+use <database>
+
+```
+
+create a collection
+
+```
+db.createCollection("<somecollectionname>")
+
+```
+
+
+
