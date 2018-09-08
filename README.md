@@ -2646,5 +2646,26 @@ db.createCollection("<somecollectionname>")
 
 ```
 
+# 9/8/2018 Mongoose
+
+## Mongoose
+* Helps write an object mapper which can create a schema
+* Custom methods, format data in the model 
+* Populate data with Mongoose, similair to SQL join 
+
+Think like Sequelize or MySql schema, but a version for Mongoose. 
+
+Random links NPM 
+
+https://github.com/creationix/nvm
+https://github.com/mably/lncli-web
 
 
+
+## Mongo Population
+* Think SQL join
+* Foreign keys, sometimes leveraging the UUID that comes built in on mongo
+```
+db.book.find({title:'Coraline'}).populate("author")
+```
+adds a key which is "author" which might be 
