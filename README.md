@@ -2669,3 +2669,94 @@ https://github.com/mably/lncli-web
 db.book.find({title:'Coraline'}).populate("author")
 ```
 adds a key which is "author" which might be 
+
+# 9/11/2018
+
+## ES6
+
+## React
+Framework which handles MVC all in the browser
+
+## New in ES6
+
+* let/const
+* functions
+    * default parameters
+    * arrow functions
+* promises
+* classes
+* template strings
+* array/object helper functions 
+
+
+## Let/Const
+
+"block" scope
+
+Whereas var is is globabl
+
+## const 
+* can not be reassigned, contents can be updated
+* helps readers id such values
+
+## let
+* can be reassigned
+
+
+## template strings
+
+can use the "tick mark"
+
+```
+
+`how many tacos did ${classmate} eat`; 
+
+```
+which is better than what we usually do
+
+```
+
+"how many tacos did " + classmate + " eat"
+
+```
+
+Also can do line breaks and the template strings interpert it 
+
+```
+`how many 
+tacos 
+did ${classmate} eat`; 
+
+```
+
+
+## .map
+
+Returns an object 
+
+## .filter
+
+Can be used on an array and to evaulate if a criteria is TRUE or FALSE and it returns that array
+
+## .reduce
+
+```
+x.reduce(function(accumulator, item))
+```
+## arrow functions 
+
+## object destrucuring
+
+```
+const animals = ["bird", "dog"]
+//the below deconstructs the list and then adds the string in 
+
+const myAnimals = [...animals, "cat"]
+
+console.log(myAnimal)
+
+```
+
+
+
+
