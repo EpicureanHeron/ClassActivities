@@ -2757,6 +2757,60 @@ console.log(myAnimal)
 
 ```
 
+# 09/13/2018 React
 
+## High level summary
 
+React manages state changes on a virutal DOM so several things can go on at the same time without interfering with one another
+
+Pros
+* Component based, breaks app's UI into reusable components 
+* reactively updates in response to updteas to its "state" reduces the DOM mainpulation needed
+* Can be used ot build applications on the web, server, and in native apps
+* Arguably easier to learn and more populate than other competing frontend JS libraries
+
+Cons 
+* just a view library concerned with rendering user interfaces, HTTP request have to be used still
+* setting up react can require more configuration than other libraries 
+
+## Details
+
+Needs a "build system" 
+Similair to NPM but for the frontend/browser side
+Using Webpack and Babel
+
+### Babel
+JS complier, allows next generation JS code ES6, ES7, etc into ES5 that most browsers will understand 
+
+## Starting a react app
+
+```
+create-react-app <some name>
+```
+
+## yarn 
+
+yarn is like NPM but better apparently
+
+to start react app after it is set up run
+
+```
+yarn start
+```
+
+## JSX
+
+JSX is a magical version of javascript that you can just write HTML with. Whenever using its syntax, make sure at the top of the document
+```
+import React from "react";
+
+```
+
+JSX looks like the <p> tags but can be much more I think
+ 
+```
+
+const HelloReact = () => <p>Hello World!</p>;
+
+```
 
