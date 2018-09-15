@@ -2814,3 +2814,54 @@ const HelloReact = () => <p>Hello World!</p>;
 
 ```
 
+# 09/15/2018 More React
+
+https://react-reacap.netlify.com/#/
+
+## Components
+
+* Layout and logic are kept bundled in a self-contained packate
+* Easily be reused
+* Easy to test
+
+## JSX
+
+* Javascript extension which uses HTML syntax
+* Looks like HTML but there are a few things that are not exactly the same (class vs className)
+* {} used inside to render code in JSX, needs to have a return value 
+
+## Props
+* Short for properties 
+* similair to properties in terms of HTML element 
+* Props are like function arguments that are passed into components
+
+## ReactDOM.render
+
+* Handles DOM rendering 
+
+## .Map and components 
+
+Iterating over a list of objects and rendering them
+
+```
+const App = () => ( <div>{someArray.map(item => <List name = {item.name} />)}</div>)
+
+```
+
+## State 
+
+Every time a change has been made previously, everything on the DOM has to be rerendered.
+
+Using STATE it doesn't need to be rerendered itself
+
+Try to make components stateless whenver possible, according to David
+
+## React Resources
+
+https://www.youtube.com/playlist?list=PLoYCgNOIyGABs-wDaaxChu82q_xQgUb4f
+
+https://reactjs.org/docs/forms.html
+
+https://reactjs.org/docs/lifting-state-up.html
+
+https://reactjs.org/docs/state-and-lifecycle.html
