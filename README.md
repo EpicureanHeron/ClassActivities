@@ -2865,3 +2865,33 @@ https://reactjs.org/docs/forms.html
 https://reactjs.org/docs/lifting-state-up.html
 
 https://reactjs.org/docs/state-and-lifecycle.html
+
+# 9/18/2018 More React
+
+## Conditional Rendering 
+Waits for everything to load before the code executes
+```
+componentDidMount(){
+    //some code
+}
+```
+
+ternary function 
+https://en.wikipedia.org/wiki/%3F:
+
+## React Routing 
+
+```
+yarn add react-router-dom
+
+```
+
+Can grab the current url on the following path
+
+```
+${props.match.url}
+
+```
+which can be used to render additional routes. Key word there is render.
+
+Seems that this loading needs to happen within the component, or, more precisely it is easier to reuse if the ${props.match.url}
