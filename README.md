@@ -2895,3 +2895,13 @@ ${props.match.url}
 which can be used to render additional routes. Key word there is render.
 
 Seems that this loading needs to happen within the component, or, more precisely it is easier to reuse if the ${props.match.url}
+
+
+#9/20/2018 MERN and React
+
+* Mongo
+* Express
+* React
+* Node
+
+At least for tonight, Express and React will have servers running in parallel and working together 
