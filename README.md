@@ -2905,3 +2905,133 @@ Seems that this loading needs to happen within the component, or, more precisely
 * Node
 
 At least for tonight, Express and React will have servers running in parallel and working together 
+
+# 9/25/2018 Java
+
+## Public Classes
+
+### Some Boilerplate
+```
+package console; /*this details the file structure in some way. convention is something like com.google.console
+
+import java.util.Scanner;
+
+public class Console.IO {
+
+
+}
+
+```
+
+Convention for starting a class (I think it is a class)
+
+```
+public static void main(String[] args) {
+
+}
+```
+Java is a complied language, have to compile it every time so then the Java Virtual Machine can then run it 
+
+Java needs object type defined when the variable is created such that
+
+```
+String name = "Cleopatara"
+int age = 2000/5
+boolean truth = true
+boolean falsy = !truth
+
+```
+Lower case Java is "primitive" 
+Upper case Java is something else...
+has something to do wit the object types that are declared, not elborated on 
+
+
+to compile code in java
+
+```
+
+javac <somefile.java>
+
+```
+
+This will create a java binary file that ends in .class (at least for now)
+
+then to run that .class file
+
+```
+
+java -cp . folder.nameOfDotClassFile
+
+```
+THe "." notation means it is in the same directory, otherwise you need to do .. or something...not quite sure
+
+
+## Arrays
+
+Arrays need to have a set length
+syntax
+initalizing 
+```
+String[] names
+```
+
+Two ways of creating a string 
+```
+names = new String[3]
+```
+
+## For Loops
+
+```
+for (int i =0; someArray.length; i += 1) {
+    system.out.println(
+        String.format(someArray[i])
+    )
+}
+```
+
+## ArrayLists
+
+ArrayLists are more powerful
+
+```
+package collections;
+
+import java.util.ArrayList;
+
+public class ArrayLists {
+
+}
+
+
+```
+
+## Hashmaps
+
+Think like key value pairs in javascript 
+
+
+Hashmaps are the most frequently used, but there are other maps
+
+
+## Functions
+
+In Java nothing lives outside of a class
+
+Functions must live inside of a class (or methods)
+
+
+Must return a type
+
+void in Java is a reserved word that tells java that nothing is expected to be returned
+
+## Private
+
+using the `private` modifer (which is opposite of public) which limits the accesability 
+
+
+## Classes
+
+Powerful for creating OBJECTS
+
+Constructors can be used to create new objects with set attributes expected along with methods 

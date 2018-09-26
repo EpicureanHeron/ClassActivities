@@ -1,6 +1,8 @@
 import axios from "axios";
-const BASEURL = "https://dog.ceo/api/breeds/image/random/1";
-
+require("dotenv").config();
+var key = require("../keys.js");
+const BASEURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?";
+const APIKEY = key.nyt.id
 
 export default {
   search: function() {
