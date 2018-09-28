@@ -3035,3 +3035,66 @@ using the `private` modifer (which is opposite of public) which limits the acces
 Powerful for creating OBJECTS
 
 Constructors can be used to create new objects with set attributes expected along with methods 
+
+# 09/27/2018 Java Classes
+
+## Object Oriented Programming
+
+* Software should be able to be broken apart into individual modules
+* Then those modules can be reconstructed 
+* Better architecture
+* Easier to modify
+* In Java class is a blueprint of an object
+
+Rule of thumb
+
+Classes should be a "noun" 
+Methods should be "verbs"
+
+## Running bash scripts
+```
+./bashscript.sh
+```
+
+## Extending Classes
+
+You can add a class to a class
+
+Think taking an animals class and then extending it for a bird or dog.
+
+```
+
+class SOMECLASS extends PARENTCLASS {
+    something (String name){
+        super(name)
+    }
+}
+```
+
+SUPER refers back to the PARENTCLASS.
+
+Can literally pass things back into the PARENTCLASS by calling super where that SUPER is referring back to the parent constructor
+
+Abstract flag (I'm not sure what these are called, but the key words added before variables or functions) can be used to call out properties of an object which may have children objects that do not use that particular property
+
+
+Resources
+
+* https://dzone.com/refcardz
+* Stack Overflow
+* Oracle Documents 
+
+## Interfaces
+
+example
+```
+class Cat extends Animal implements Pet {
+
+}
+```
+
+Interfaces are promises it sounds like
+
+Good explanation here: https://www.geeksforgeeks.org/interfaces-in-java/
+
+It sounds like interfaces focus on the commonalities between different classes 
