@@ -3098,3 +3098,120 @@ Interfaces are promises it sounds like
 Good explanation here: https://www.geeksforgeeks.org/interfaces-in-java/
 
 It sounds like interfaces focus on the commonalities between different classes 
+
+
+# 09/29/2018 More Java
+
+## Problem Conditions
+
+Two general types of problem conditions
+* Error, serious problems that is probably external 
+* Exception, actual problems with the code
+
+
+## throwable cause
+* can force exceptions to be thrown
+* superclass for erro and exception
+
+Example
+```
+try {...} 
+
+catch(Exception e){...}
+
+```
+
+Seems to be useful for debuggin
+```
+catch(some.conditions e) {
+    e.printStackTrace()
+}
+
+```
+
+In Class example:
+
+```
+try {
+      Polygon square = new Polygon(3, 0);
+
+    } catch (Polygon.InsufficientVerticesException e) {
+      System.out.println(e);
+    } catch (Polygon.InvalidSideLengthException e) {
+      System.out.println(e);
+    }
+
+```
+Can importan all the exceptions with the following at the top of the file:
+```
+import com.exceptions.custom.* 
+```
+and then just call out the message name in the catch block like so
+
+```
+try {
+      Polygon square = new Polygon(3, 0);
+
+    } catch (InsufficientVerticesException | InvalidSideLengthException e) {
+      System.out.println(e);
+    }
+```
+
+
+Exceptions are high level ways to handle errors. Java is a strict language, it needs everything up front and verbose. 
+
+## Variadic Functions & Streams
+
+Collections have a method called stream, which turns the collection into a stream
+
+A collection is a group of things. A stream is a thing at a time.
+
+```
+List<String> items - new ArrayList<String>();
+
+items.add("one");
+items.add("two");
+items.add("three");
+
+Stream<String> stream = items.stream();
+
+```
+
+Collection: the entire array as one unit
+Stream: each item of a string as its own unit 
+
+Streams often use LAMBDA expressions
+
+## Some stream methods
+
+* .stream();
+* .filter(...); filter removes items from the array 
+* .map(...); alters the items from the stream and returns a new stream
+* .collect(...);  
+
+
+# 10/02/2018 Algorithms
+
+## Linear Search 
+
+For loop searching for a value
+
+Painful when the last element in the array is the one you are looking for it
+
+it has a 
+```
+O(n)
+
+```
+https://en.wikipedia.org/wiki/Big_O_notation
+
+Which basically says that the length of the array dictates the speed of the results
+
+## Binary Search
+
+Split things in half just search a section at a time 
+
+Only works in a sorted list 
+
+split the array in half, see if the index at that halfway part is greater than or less than, then depending on the results, split the 1/2 into another 1/2 by selecting the middle index 
+
