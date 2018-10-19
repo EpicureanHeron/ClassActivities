@@ -3215,3 +3215,39 @@ Only works in a sorted list
 
 split the array in half, see if the index at that halfway part is greater than or less than, then depending on the results, split the 1/2 into another 1/2 by selecting the middle index 
 
+#10/04/2018 
+
+## SEO Notes
+
+### Guidelines
+* Content is king
+* keywords in titles, headers, body
+    * Unique and relevant
+* Links
+    * Internal normalcy
+    * External popularity
+* Write and submit sitemap
+* Avoid bad feedback, don't spam and add a robot metatag to non-landing pages
+
+## Algorithm pt 2
+
+Selection Sort
+
+
+# 10/06/2018 Algorithms
+
+
+## Book Recommendations
+
+Read this cover to cover: Pragmatic Programmer
+
+GOod reference book: Clean Code
+
+## EFficiency
+
+* More steps, less effecient 
+
+* Less Steps, more effecient 
+
+Nesting for loops are bad for effeciency, makes it exponentially slower
+
