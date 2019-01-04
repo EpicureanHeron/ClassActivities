@@ -1,0 +1,10 @@
+state = {
+  shuffledCards: []
+}
+
+
+shuffle() {
+  
+}
+
+
